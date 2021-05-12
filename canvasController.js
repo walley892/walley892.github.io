@@ -29,5 +29,5 @@ function drawOscNodes(){
 }
 
 setUpCanvas();
-placeNodes();
+initOscController();
 drawOscNodes();
