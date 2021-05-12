@@ -12,7 +12,7 @@ function setUpCanvas() {
 function drawOscNode(node){
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
-	ctx.arc(node.posX, node.posY, 25, 2*Math.PI);
+	ctx.arc(node.posX, node.posY, 25, 0, 2*Math.PI);
 	ctx.fillStyle = 'rgb(255, 0, 0)';
 	ctx.fill();
 }
