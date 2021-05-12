@@ -1,4 +1,4 @@
-import {placeNodes, getNodes} from "./oscController";
+import {placeNodes, getNodes} from "./oscController.js";
 var canvasWidth, canvasHeight;
 var canvas;
 function setUpCanvas() {
