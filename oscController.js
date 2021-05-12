@@ -19,7 +19,7 @@ function placeNodes(radius, n_rings, centerX, centerY){
 	nodes.push(new Node(centerX, centerY));
 	for (var i = 0; i < n_rings; ++i){
 		var bigRadius = 2*radius*(i+1);
-		nodes_in_ring = Math.PI/(Math.asin(radius/bigRadius));
+		var nodes_in_ring = Math.PI/(Math.asin(radius/bigRadius));
 		var deltaAngle = Math.PI/nodes_in_ring;
 		for(var j = 0; j < nodes_in_ring; ++j){
 			var angle = deltaAngle*j;
