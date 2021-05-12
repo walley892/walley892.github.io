@@ -30,3 +30,4 @@ function drawOscNodes(){
 
 setUpCanvas();
 placeNodes();
+drawOscNodes();
