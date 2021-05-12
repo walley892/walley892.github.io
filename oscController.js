@@ -32,3 +32,5 @@ function placeNodes(radius, n_rings, centerX, centerY){
 function getNodes(){
 	return nodes;
 }
+
+export {placeNodes, getNodes};
