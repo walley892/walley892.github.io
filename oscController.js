@@ -20,7 +20,7 @@ function placeNodes(radius, n_rings, centerX, centerY){
 	for (var i = 0; i < n_rings; ++i){
 		var bigRadius = 2*radius*(i+1);
 		var nodes_in_ring = Math.PI/(Math.asin(radius/bigRadius));
-		var deltaAngle = Math.PI/nodes_in_ring;
+		var deltaAngle = (2*Math.PI)/nodes_in_ring;
 		for(var j = 0; j < nodes_in_ring; ++j){
 			var angle = deltaAngle*j;
 			var pos = polarToCartesian(bigRadius, angle);
