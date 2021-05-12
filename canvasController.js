@@ -17,7 +17,7 @@ function drawOscNode(node){
 	ctx.fill();
 }
 
-function initOscContoller(){
+function initOscController(){
 	placeNodes(25, 1, canvasHeight/2, canvasWidth/2);
 }
 
