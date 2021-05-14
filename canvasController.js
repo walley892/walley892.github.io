@@ -5,7 +5,7 @@ var canvas;
 function setUpCanvas() {
 	canvas = document.getElementById("mainCanvas");
 	canvas.width = document.body.clientWidth;
-	canvas.height = document.body.clientWidth;
+	canvas.height = document.body.clientHeight;
 	canvasWidth = canvas.width;
 	canvasHeight = canvas.height;
 }
@@ -19,7 +19,7 @@ function drawOscNode(node){
 }
 
 function initOscController(){
-	placeNodes(50, 2, canvasHeight/2, canvasWidth/2);
+	placeNodes(Math.PI*18, 2, canvasHeight/2, canvasWidth/2);
 }
 
 function drawOscNodes(){
