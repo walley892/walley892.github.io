@@ -13,13 +13,13 @@ function setUpCanvas() {
 function drawOscNode(node){
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
-	ctx.arc(node.posX, node.posY, 50, 0, 2*Math.PI);
+	ctx.arc(node.posX, node.posY, Math.PI*18, 0, 2*Math.PI);
 	ctx.fillStyle = 'rgb(255, 0, 0)';
 	ctx.fill();
 }
 
 function initOscController(){
-	placeNodes(Math.PI*18, 2, canvasHeight/2, canvasWidth/2);
+	placeNodes(Math.PI*18, 2, canvasWidth/2, canvasHeight/2);
 }
 
 function drawOscNodes(){
