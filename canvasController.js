@@ -4,8 +4,8 @@ var canvas;
 
 function setUpCanvas() {
 	canvas = document.getElementById("mainCanvas");
-	canvas.width = document.body.clientWidth;
-	canvas.height = document.body.clientHeight;
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
 	canvasWidth = canvas.width;
 	canvasHeight = canvas.height;
 }
