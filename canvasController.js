@@ -19,8 +19,8 @@ function drawOscNode(node){
 }
 
 function initOscController(){
-	var nodes_per_ring = [10, 6, 4];
-	var ring_sizes = [canvasWidth/12, canvasWidth/8, canvasWidth/4];
+	var nodes_per_ring = [10, 6];
+	var ring_sizes = [canvasWidth/12, canvasWidth/8];
 	placeNodes(nodes_per_ring, ring_sizes, canvasWidth/2, canvasHeight/2);
 }
 
