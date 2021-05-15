@@ -18,36 +18,9 @@ function polarToCartesian(r, theta){
 	return [r*Math.cos(theta), r*Math.sin(theta)];
 }
 
-
-//place n_nodes[i] rings around the ith concentric ring of radius radii[i]
-function placeNodes(n_nodes, radii, centerX, centerY){
-	// Add the center node
-	nodes.push(new Node(centerX, centerY, 50));
-	for (var i = 0; i < radii.length; ++i){
-		var nodes_in_ring = n_nodes[i];
-		var bigradius = radii[i];
-		var deltaAngle = (2*Math.PI)/nodes_in_ring;
-		var littleradius = bigradius*Math.sin(Math.PI/nodes_in_ring);
-		var prevLength = nodes.length;
-		for(var j = 0; j < nodes_in_ring; ++j){
-			var angle = deltaAngle*j;
-			var pos = polarToCartesian(bigradius, angle);
-			var newNode = new Node(centerX + pos[0], centerY + pos[1], littleradius);
-			nodes.push(newNode);
-			if(j != 0){
-				newNode.addNeighbor(nodes[nodes.length-1]);
-				nodes[nodes.length-1].addNeighbor(newNode);
-			}
-			if(j == nodes_in_ring -1){
-				newNode.addNeighbor(nodes[prevLength]);
-				nodes[prevLength].addNeighbor(newNode);
-			}
-		}
-	}
-}
-
 function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 	var deltaAngle = (2*Math.PI)/nNodes;
+	var prevLength = nodes.length;
 	for(var i = 0; i < nNodes; ++i){
 		var angle = deltaAngle*i;
 		var pos = polarToCartesian(bigRadius, angle);
@@ -56,7 +29,24 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 		if(i != 0){
 			newNode.addNeighbor(nodes[nodes.length-1]);
 			nodes[nodes.length-1].addNeighbor(newNode);
+		}	
+		if(j == nNodes -1){
+			newNode.addNeighbor(nodes[prevLength]);
+			nodes[prevLength].addNeighbor(newNode);
 		}
+	}
+}
+
+
+//place n_nodes[i] rings around the ith concentric ring of radius radii[i]
+function placeNodes(n_nodes, radii, centerX, centerY){
+	// Add the center node
+	nodes.push(new Node(centerX, centerY, 50));
+	for (var i = 0; i < radii.length; ++i){
+		var nodes_in_ring = n_nodes[i];
+		var bigRadius = radii[i];
+		var littleRadius = bigradius*Math.sin(Math.PI/nodes_in_ring);
+		placeNNodesInRing(nodes_in_ring, bigRadius, littleRadius, centerX, centerY);
 	}
 }
 
