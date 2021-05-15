@@ -17,7 +17,7 @@ function drawOscNode(node){
 	var state = node.state;
 	var red = Math.floor(state*255);
 	var blue = 255 - red;
-	ctx.fillStyle = 'rgb(${red}, ${blue}, 0)';
+	ctx.fillStyle = 'rgb(' + red + ', '+blue+', 0)';
 	ctx.fill();
 }
 
