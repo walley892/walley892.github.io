@@ -64,6 +64,7 @@ function drawOscNodes(){
 	for(var i = 0; i < nodes.length; ++i){
 		drawOscNode(nodes[i]);
 	}
+	drawText();
 }
 
 setUpCanvas();
