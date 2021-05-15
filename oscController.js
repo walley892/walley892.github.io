@@ -30,7 +30,7 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 			newNode.addNeighbor(nodes[nodes.length-1]);
 			nodes[nodes.length-1].addNeighbor(newNode);
 		}	
-		if(j == nNodes -1){
+		if(i == nNodes -1){
 			newNode.addNeighbor(nodes[prevLength]);
 			nodes[prevLength].addNeighbor(newNode);
 		}
