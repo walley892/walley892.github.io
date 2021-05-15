@@ -13,6 +13,7 @@ function setUpCanvas() {
 function drawText(){
 	var canvas = document.getElementById("mainCanvas");
 	var ctx = canvas.getContext("2d");
+	ctx.globalAlpha = 1;
 	ctx.font = "30px Comic Sans MS";
 	ctx.fillStyle = "black";
 	ctx.textAlign = "center";
