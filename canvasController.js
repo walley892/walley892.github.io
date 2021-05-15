@@ -1,4 +1,4 @@
-import {placeNodes, getNodes, planeNNodesInRing} from "./oscController.js";
+import {placeNodes, getNodes, placeNNodesInRing} from "./oscController.js";
 var canvasWidth, canvasHeight;
 var canvas;
 
