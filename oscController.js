@@ -45,7 +45,7 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 	for (var i = 0; i < radii.length; ++i){
 		var nodes_in_ring = n_nodes[i];
 		var bigRadius = radii[i];
-		var littleRadius = bigradius*Math.sin(Math.PI/nodes_in_ring);
+		var littleRadius = bigRadius*Math.sin(Math.PI/nodes_in_ring);
 		placeNNodesInRing(nodes_in_ring, bigRadius, littleRadius, centerX, centerY);
 	}
 }
