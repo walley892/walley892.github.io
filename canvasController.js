@@ -17,7 +17,9 @@ function drawOscNode(node){
 	var state = node.state;
 	var red = Math.floor(state*255);
 	var blue = 255 - red;
-	ctx.fillStyle = 'rgb(' + red + ', '+blue+', 0)';
+	ctx.globalAlpha = 1 -state;
+	//ctx.fillStyle = 'rgb(' + red + ', '+blue+', 0)';
+	ctx.fillStyle = 'rgb(0, 255, 0)';
 	ctx.fill();
 }
 
@@ -38,5 +40,5 @@ function drawOscNodes(){
 setUpCanvas();
 initOscController();
 drawOscNodes();
-window.setInterval(updateNodes, 30);
-window.setInterval(drawOscNodes, 30);
+window.setInterval(updateNodes, 10);
+window.setInterval(drawOscNodes, 10);
