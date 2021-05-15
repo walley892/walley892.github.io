@@ -28,15 +28,19 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 		var bigradius = radii[i];
 		var deltaAngle = (2*Math.PI)/nodes_in_ring;
 		var littleradius = bigradius*Math.sin(Math.PI/nodes_in_ring);
+		var prevLength = nodes.length;
 		for(var j = 0; j < nodes_in_ring; ++j){
 			var angle = deltaAngle*j;
 			var pos = polarToCartesian(bigradius, angle);
 			var newNode = new Node(centerX + pos[0], centerY + pos[1], littleradius);
 			nodes.push(newNode);
-			nodes[0].addNeighbor(newNode);
 			if(j != 0){
 				newNode.addNeighbor(nodes[nodes.length-1]);
 				nodes[nodes.length-1].addNeighbor(newNode);
+			}
+			if(j == nodes_in_ring -1){
+				newNode.addNeighbor(nodes[prevLength]);
+				nodes[prevLength].addNeighbor(newNode);
 			}
 		}
 	}
