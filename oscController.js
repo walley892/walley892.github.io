@@ -51,8 +51,11 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 	for(var i = 0; i < nNodes; ++i){
 		var angle = deltaAngle*i;
 		var pos = polarToCartesian(bigRadius, angle);
-		nodes.push(new Node(centerX + pos[0], centerY + pos[1], littleRadius));
-		nodes[0].addNeighbor(nodes[nodes.length-1]);
+		var newNode = new Node(centerX + pos[0], centerY + pos[1], littleRadius);
+		if(i != 0){
+			newNode.addNeighbor(nodes[nodes.length-1]);
+			nodes[nodes.length-1].addNeighbor(newNode);
+		}
 	}
 }
 
