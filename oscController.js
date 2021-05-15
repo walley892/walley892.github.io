@@ -26,7 +26,7 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 		var littleradius = bigradius*Math.sin(Math.PI/bigradius);
 		for(var j = 0; j < nodes_in_ring; ++j){
 			var angle = deltaAngle*j;
-			var pos = polarToCartesian(bigRadius, angle);
+			var pos = polarToCartesian(bigradius, angle);
 			nodes.push(new Node(centerX + pos[0], centerY + pos[1], littleradius));
 		}
 	}
