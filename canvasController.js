@@ -1,4 +1,4 @@
-import {placeNodes, getNodes} from "./oscController.js";
+import {placeNodes, getNodes, planeNNodesInRing} from "./oscController.js";
 var canvasWidth, canvasHeight;
 var canvas;
 
@@ -22,6 +22,7 @@ function initOscController(){
 	var nodes_per_ring = [10, 8];
 	var ring_sizes = [canvasWidth/22, canvasWidth/10];
 	placeNodes(nodes_per_ring, ring_sizes, canvasWidth/2, canvasHeight/2);
+	placeNNodesInRing(4, canvasWidth/4, 80, canvasWidth/2, canvasHeight/2);
 }
 
 function drawOscNodes(){

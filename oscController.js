@@ -32,9 +32,18 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 	}
 }
 
+function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
+	var deltaAngle = (2*Math.PI)/nNodes;
+	for(var i = 0; i < nNodes; ++i){
+		var angle = deltaAngle*i;
+		var pos = polarToCartesian(bigRadius, angle);
+		nodes.push(new Node(centerX + pos[0], centerY + pos[1], littleRadius));
+	}
+}
+
 
 function getNodes(){
 	return nodes;
 }
 
-export {placeNodes, getNodes};
+export {placeNodes, getNodes, placeNNodesInRing};
