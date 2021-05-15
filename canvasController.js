@@ -17,13 +17,13 @@ function drawText(){
 	ctx.fillStyle = "black";
 	ctx.textAlign = "center";
 	var nodes = getNodes();
-	var node = nodes[nodes.length];
+	var node = nodes[nodes.length-1];
 	ctx.fillText(":)", node.posX, node.posY); 
-	node = nodes[nodes.length-1];
-	ctx.fillText("about", node.posX, node.posY); 
 	node = nodes[nodes.length-2];
-	ctx.fillText("etc.", node.posX, node.posY); 
+	ctx.fillText("about", node.posX, node.posY); 
 	node = nodes[nodes.length-3];
+	ctx.fillText("etc.", node.posX, node.posY); 
+	node = nodes[nodes.length-4];
 	ctx.fillText("projects", node.posX, node.posY); 
 	node = nodes[0];
 	ctx.fillText("E", node.posX, node.posY); 
