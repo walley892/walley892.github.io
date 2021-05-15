@@ -36,7 +36,7 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 			nodes[0].addNeighbor(newNode);
 			if(j != 0){
 				newNode.addNeighbor(nodes[nodes.length-1]);
-				nodes[node.length-1].addNeighbor(newNode);
+				nodes[nodes.length-1].addNeighbor(newNode);
 			}
 		}
 	}
