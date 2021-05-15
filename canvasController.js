@@ -1,4 +1,4 @@
-import {placeNodes, getNodes, placeNNodesInRing} from "./oscController.js";
+import {placeNodes, getNodes, placeNNodesInRing, updateNodes} from "./oscController.js";
 var canvasWidth, canvasHeight;
 var canvas;
 
@@ -14,7 +14,10 @@ function drawOscNode(node){
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
 	ctx.arc(node.posX, node.posY, node.radius, 0, 2*Math.PI);
-	ctx.fillStyle = 'rgb(255, 0, 0)';
+	var state = node.state;
+	var red = Math.floor(state*255);
+	var blue = 255 - red;
+	ctx.fillStyle = 'rgb(${red}, ${blue}, 0)';
 	ctx.fill();
 }
 
@@ -35,3 +38,4 @@ function drawOscNodes(){
 setUpCanvas();
 initOscController();
 drawOscNodes();
+window.setInterval(updateNodes, 300);
