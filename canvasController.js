@@ -37,5 +37,6 @@ function drawOscNodes(){
 
 setUpCanvas();
 initOscController();
-window.setInterval(updateNodes, 300);
-window.setInterval(drawOscNodes, 300);
+drawOscNodes();
+window.setInterval(updateNodes, 30);
+window.setInterval(drawOscNodes, 30);
