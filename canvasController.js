@@ -13,13 +13,15 @@ function setUpCanvas() {
 function drawOscNode(node){
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
-	ctx.arc(node.posX, node.posY, Math.PI*18, 0, 2*Math.PI);
+	ctx.arc(node.posX, node.posY, node.radius, 0, 2*Math.PI);
 	ctx.fillStyle = 'rgb(255, 0, 0)';
 	ctx.fill();
 }
 
 function initOscController(){
-	placeNodes(Math.PI*18, 2, canvasWidth/2, canvasHeight/2);
+	var nodes_per_ring = [10, 6, 4];
+	var ring_sizes = [canvasWidth/12, canvasWidth/8, canvasWidth/2];
+	placeNodes(nodes_per_ring, ring_sizes, canvasWidth/2, canvasHeight/2);
 }
 
 function drawOscNodes(){

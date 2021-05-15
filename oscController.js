@@ -1,8 +1,9 @@
 class Node{
-	constructor(posX, posY){
+	constructor(posX, posY, radius){
             this.posX = posX;
             this.posY = posY;
             this.state = Math.random();
+	    this.radius = radius;
             this.neighbors = [];
         }
 }
@@ -13,21 +14,24 @@ function polarToCartesian(r, theta){
 	return [r*Math.cos(theta), r*Math.sin(theta)];
 }
 
-//place nodes of radius radius in n_rings concentric rings
-function placeNodes(radius, n_rings, centerX, centerY){
+
+//place n_nodes[i] rings around the ith concentric ring of radius radii[i]
+function placeNodes(n_nodes, radii, centerX, centerY){
 	// Add the center node
 	nodes.push(new Node(centerX, centerY));
-	for (var i = 0; i < n_rings; ++i){
-		var bigRadius = 2*radius*(i+1);
-		var nodes_in_ring = Math.PI/(Math.asin(radius/bigRadius));
+	for (var i = 0; i < radii.length; ++i){
+		var nodes_in_ring = n_nodes[i];
+		var bigradius = radii[i];
 		var deltaAngle = (2*Math.PI)/nodes_in_ring;
+		var littleradius = bigradius*Math.sin(Math.PI/bigradius);
 		for(var j = 0; j < nodes_in_ring; ++j){
 			var angle = deltaAngle*j;
 			var pos = polarToCartesian(bigRadius, angle);
-			nodes.push(new Node(centerX + pos[0], centerY + pos[1]));
+			nodes.push(new Node(centerX + pos[0], centerY + pos[1], littleradius));
 		}
 	}
 }
+
 
 function getNodes(){
 	return nodes;
