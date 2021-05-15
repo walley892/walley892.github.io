@@ -10,7 +10,17 @@ function setUpCanvas() {
 	canvasHeight = canvas.height;
 }
 
+function clearOscNode(node){
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(node.posX, node.posY, node.radius, 0, 2*Math.PI);
+	ctx.globalAlpha = 1;
+	ctx.fillStyle = 'rgb(0, 0, 0)';
+	ctx.fill();
+}
+
 function drawOscNode(node){
+	clearOscNode(node);
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
 	ctx.arc(node.posX, node.posY, node.radius, 0, 2*Math.PI);
