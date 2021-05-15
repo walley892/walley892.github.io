@@ -10,6 +10,25 @@ function setUpCanvas() {
 	canvasHeight = canvas.height;
 }
 
+function drawText(){
+	var canvas = document.getElementById("mainCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.font = "30px Comic Sans MS";
+	ctx.fillStyle = "black";
+	ctx.textAlign = "center";
+	var nodes = getNodes();
+	var node = nodes[nodes.length];
+	ctx.fillText(":)", node.posX, node.posY); 
+	node = nodes[nodes.length-1];
+	ctx.fillText("about", node.posX, node.posY); 
+	node = nodes[nodes.length-2];
+	ctx.fillText("etc.", node.posX, node.posY); 
+	node = nodes[nodes.length-3];
+	ctx.fillText("projects", node.posX, node.posY); 
+	node = nodes[0];
+	ctx.fillText("E", node.posX, node.posY); 
+}
+
 function clearOscNode(node){
 	var ctx = canvas.getContext("2d");
 	ctx.beginPath();
