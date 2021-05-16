@@ -1,3 +1,6 @@
+import {SceneController} from "./base_scene_controller.js";
+
+
 class Node{
 	constructor(posX, posY, radius){
             this.posX = posX;
@@ -86,4 +89,65 @@ function updateNodes(){
 	setToZero();
 }
 
-export {placeNodes, getNodes, placeNNodesInRing, updateNodes};
+function drawText(canvas){
+	var canvas = document.getElementById("mainCanvas");
+	var ctx = canvas.getContext("2d");
+	ctx.globalAlpha = 1;
+	ctx.font = "30px Comic Sans MS";
+	ctx.fillStyle = "black";
+	ctx.textAlign = "center";
+	var nodes = getNodes();
+	var node = nodes[nodes.length-1];
+	ctx.fillText(":)", node.posX, node.posY); 
+	node = nodes[nodes.length-2];
+	ctx.fillText("about", node.posX, node.posY); 
+	node = nodes[nodes.length-3];
+	ctx.fillText("etc.", node.posX, node.posY); 
+	node = nodes[nodes.length-4];
+	ctx.fillText("projects", node.posX, node.posY); 
+	node = nodes[0];
+	ctx.fillText("E", node.posX, node.posY); 
+}
+
+function clearOscNode(node, canvas){
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(node.posX, node.posY, node.radius + 1, 0, 2*Math.PI);
+	ctx.globalAlpha = 1;
+	ctx.fillStyle = 'rgb(0, 0, 0)';
+	ctx.fill();
+}
+
+function drawOscNode(node, canvas){
+	clearOscNode(node, canvas);
+	var ctx = canvas.getContext("2d");
+	ctx.beginPath();
+	ctx.arc(node.posX, node.posY, node.radius, 0, 2*Math.PI);
+	var state = node.state;
+	var red = Math.floor(state*255);
+	var blue = 255 - red;
+	ctx.globalAlpha = state;
+	//ctx.fillStyle = 'rgb(' + red + ', '+blue+', 0)';
+	ctx.fillStyle = 'rgb(0, 255, 255)';
+	ctx.fill();
+}
+
+class OscSceneController extends SceneController{
+	initScene(){
+		var nodes_per_ring = [10, 8];
+		var ring_sizes = [this.canvas.width/22, this.canvas.width/10];
+		placeNodes(nodes_per_ring, ring_sizes, this.canvas.width/2, this.canvas.height/2);
+		placeNNodesInRing(4, this.canvas.width/5, 145, this.canvas.width/2, this.canvas.height/2);
+	}
+	drawScene(){
+		for(var i = 0; i < nodes.length; ++i){
+			drawOscNode(nodes[i], this.canvas);
+		}
+		drawText(this.canvas);
+	}
+	update(){
+		updateNodes();
+	}
+}
+
+export {OscSceneController};
