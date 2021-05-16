@@ -15,5 +15,5 @@ setUpCanvas();
 var controller = new OscSceneController(canvas);
 controller.initScene();
 
-window.setInterval(controller.update, 10);
-window.setInterval(controller.drawScene, 10);
+window.setInterval(controller.update.bind(controller), 10);
+window.setInterval(controller.drawScene.bind(controller), 10);
