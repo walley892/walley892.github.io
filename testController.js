@@ -1,3 +1,5 @@
+import {loadText} from "./utils.js";
+
 var canvas = document.getElementById("mainCanvas");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -5,7 +7,7 @@ canvas.height = window.innerHeight;
 
 var glslCanvas = new GlslCanvas(canvas);
 
-var frag = "uniform mediump vec2 u_resolution;\n void main() {\ngl_FragColor = vec4(gl_FragCoord.x/u_resolution.x, 0, 0, 1);\n}\n";
+var frag = await loadText("testFrag.frag");
 
 glslCanvas.load(frag);
 export {canvas, glslCanvas};
