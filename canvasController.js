@@ -8,7 +8,7 @@ class SiteController{
 		this.activeScene = null;
 	}
 	setScene(sceneControllerCls){
-		this.activeScene = new sceneController(this.canvas);
+		this.activeScene = new sceneControllerCls(this.canvas);
 	}
 	startActiveScene(){
 		this.activeScene.initScene();
