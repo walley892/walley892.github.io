@@ -1,3 +1,3 @@
 async function loadText(title){
-	return await fetch("/" + title).then(response => response.text();
+	return await fetch("/" + title).then(response => response.text());
 }
