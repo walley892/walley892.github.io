@@ -26,5 +26,5 @@ class SiteController{
 
 var siteController = new SiteController();
 
-siteController.setScene(OscSceneController);
-siteController.startActiveScene();
+//siteController.setScene(OscSceneController);
+//siteController.startActiveScene();
