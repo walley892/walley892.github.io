@@ -1,4 +1,6 @@
 import {OscSceneController} from "./oscController.js";
+import * as glslCanvas from "https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js";
+
 
 class SiteController{
 	constructor(){
