@@ -7,7 +7,7 @@ canvas.height = window.innerHeight;
 
 var glslCanvas = new GlslCanvas(canvas);
 
-var frag = await loadText("testFrag.frag");
+//var frag = await loadText("testFrag.frag");
 
-glslCanvas.load(frag);
+//glslCanvas.load(frag);
 export {canvas, glslCanvas};
