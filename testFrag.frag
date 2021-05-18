@@ -14,7 +14,7 @@ void main(){
 	for(int i = 0; i < 19; ++i){
 		mediump float state = u_state[i];
 		mediump vec2 position = u_position[i];
-		c += vec4(state/dist(position, gl_FragCoord.xy/u_resolution.xy), 0.0, 0.0, 1.0);
+		c += vec4(0.2/dist(position, gl_FragCoord.xy/u_resolution.xy), 0.0, 0.0, 1.0);
 	}
 	gl_FragColor = c;
 }
