@@ -10,7 +10,7 @@ uniform mediump float u_state[19];
 
 
 void main(){
-	mediump vec4 c = (0.0, 0.0, 0.0 ,0.0);
+	mediump vec4 c = vec4(0.0, 0.0, 0.0 ,0.0);
 	for(int i = 0; i < 19; ++i){
 		mediump float state = u_state[i];
 		mediump vec2 position = u_position[i];
