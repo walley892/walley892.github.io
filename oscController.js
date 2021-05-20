@@ -1,5 +1,5 @@
 import {SceneController} from "./base_scene_controller.js";
-
+import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
 
 class Node{
 	constructor(posX, posY, radius){
@@ -138,9 +138,9 @@ class OscSceneController extends SceneController{
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
-		var ring_sizes = [this.canvas.width/22, this.canvas.width/10];
-		placeNodes(nodes_per_ring, ring_sizes, this.canvas.width/2, this.canvas.height/2);
-		placeNNodesInRing(4, this.canvas.width/5, 145, this.canvas.width/2, this.canvas.height/2);
+		var ring_sizes = [(baseScreenWidth/22) / baseScreenWidth, (baseScreenWidth/10) / baseScreenWidth];
+		placeNodes(nodes_per_ring, ring_sizes, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
+		placeNNodesInRing(4, (baseScreenWidth/5)/baseScreenWidth, 145, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
 	}
 	drawScene(){
 		for(var i = 0; i < nodes.length; ++i){
