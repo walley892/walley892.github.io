@@ -134,6 +134,7 @@ function drawOscNode(node, canvas){
 class OscSceneController extends SceneController{
 	constructor(canvas, glslCanvas){
 		super(canvas, glslCanvas);
+		this.glslCanvas = glslCanvas;
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
