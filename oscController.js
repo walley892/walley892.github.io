@@ -67,7 +67,7 @@ function kickNeighbors(){
 	for(var i = 0; i < nodes.length; ++i){
 		if(nodes[i].prevState >=1){
 			for(var j = 0; j < nodes[i].neighbors.length; ++j){
-				nodes[i].neighbors[j].state += 0.2;
+				nodes[i].neighbors[j].state += 0.5;
 			}
 		}
 	}
