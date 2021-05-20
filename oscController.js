@@ -155,4 +155,4 @@ class OscSceneController extends SceneController{
 	}
 }
 
-export {OscSceneController};
+export {OscSceneController, getNodes};
