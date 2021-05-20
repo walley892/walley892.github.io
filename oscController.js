@@ -44,7 +44,7 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 //place n_nodes[i] rings around the ith concentric ring of radius radii[i]
 function placeNodes(n_nodes, radii, centerX, centerY){
 	// Add the center node
-	nodes.push(new Node(centerX, centerY, 50));
+	nodes.push(new Node(centerX, centerY, 50/baseScreenWidth));
 	for (var i = 0; i < radii.length; ++i){
 		var nodes_in_ring = n_nodes[i];
 		var bigRadius = radii[i];
@@ -147,8 +147,8 @@ class OscSceneController extends SceneController{
 	}
 	drawScene(){
 		this.glslCanvas.setUniform("u_position", ...(nodes.map((node) => [node.posX, node.posY])));
-		this.glslCanvas.setUniform("u_radius", ...(nodes.map((node) => node.radius).slice(0, 5)));
-		this.glslCanvas.setUniform("u_state", ...(nodes.map((node) => node.state).slice(0, 5)));
+		this.glslCanvas.setUniform("u_radius", ...(nodes.map((node) => node.radius)));
+		this.glslCanvas.setUniform("u_state", ...(nodes.map((node) => node.state)));
 	}
 	update(){
 		updateNodes();
