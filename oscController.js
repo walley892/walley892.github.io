@@ -132,9 +132,8 @@ function drawOscNode(node, canvas){
 }
 
 class OscSceneController extends SceneController{
-	constructor(canvas){
-		super(canvas);
-		this.canvas = canvas;
+	constructor(canvas, glslCanvas){
+		super(canvas, glslCanvas);
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
@@ -142,11 +141,12 @@ class OscSceneController extends SceneController{
 		placeNodes(nodes_per_ring, ring_sizes, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
 		placeNNodesInRing(4, (baseScreenWidth/5)/baseScreenWidth, 145, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
 	}
+	fragFile(){
+		return "oscFrag.frag";
+	}
 	drawScene(){
-		for(var i = 0; i < nodes.length; ++i){
-			drawOscNode(nodes[i], this.canvas);
-		}
-		drawText(this.canvas);
+		this.glslCanvas.setUniform("u_position", ...(nodes.map((node) => [node.posX, node.posY])));
+		this.glslCanvas.setUniform("u_state", ...(nodes.map((node) => node.state)));
 	}
 	update(){
 		updateNodes();
