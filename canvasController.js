@@ -1,5 +1,5 @@
 import {OscSceneController} from "./oscController.js";
-import {loadText} from "./utils.js":
+import {loadText} from "./utils.js";
 
 class SiteController{
 	constructor(){
