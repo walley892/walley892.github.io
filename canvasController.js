@@ -1,4 +1,5 @@
 import {OscSceneController} from "./oscController.js";
+import {loadText} from "./utils.js":
 
 class SiteController{
 	constructor(){
@@ -10,6 +11,7 @@ class SiteController{
 	}
 	setScene(sceneControllerCls){
 		this.activeScene = new sceneControllerCls(this.canvas);
+		loadText(this.activeScene.fragFile()).then((frag) = > this.glslCanvas.load(frag));
 	}
 	startActiveScene(){
 		this.activeScene.initScene();
@@ -26,5 +28,5 @@ class SiteController{
 
 var siteController = new SiteController();
 
-//siteController.setScene(OscSceneController);
-//siteController.startActiveScene();
+siteController.setScene(OscSceneController);
+siteController.startActiveScene();
