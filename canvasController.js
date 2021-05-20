@@ -10,7 +10,7 @@ class SiteController{
 		this.activeScene = null;
 	}
 	setScene(sceneControllerCls){
-		this.activeScene = new sceneControllerCls(this.canvas);
+		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas);
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
 	}
 	startActiveScene(){
