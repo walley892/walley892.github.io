@@ -17,11 +17,11 @@ class SiteController{
 		this.activeScene.initScene();
 		this.activeSceneUpdate = window.setInterval(
 			this.activeScene.update.bind(this.activeScene),
-			1
+			10
 		);
 		this.activeSceneDraw = window.setInterval(
 			this.activeScene.drawScene.bind(this.activeScene),
-			1
+			10
 		);
 	}
 }
