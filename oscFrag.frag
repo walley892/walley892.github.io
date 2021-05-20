@@ -18,7 +18,7 @@ void main(){
 		mediump float radius = u_radius[i];
 		mediump float d = dist(position, gl_FragCoord.xy/u_resolution.xy);
 		if(position.x != 0.0 && position.y != 0.0 && d < radius) {
-		    c += vec4(state/(1.0+((d*d*d)/(radius*radius))), 0.0, 0.0, 1.0);
+		    c += vec4(state/(1.0+((d*d)/(radius*radius))), 0.0, 0.0, 1.0);
 		}
 	}
 	gl_FragColor = c;
