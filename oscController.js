@@ -29,18 +29,18 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 		var pos = polarToCartesian(bigRadius, angle);
 		var newNode = new Node(centerX + pos[0], centerY + pos[1], littleRadius);
 		nodes.push(newNode);
+		/*
 		for(var j = prevLength; j < nodes.length-1; ++j){
 			nodes[j].addNeighbor(newNode);
 			newNode.addNeighbor(nodes[j]);
 		}
-		/*
+		*/
 		if(i != 0){
 			nodes[nodes.length-1].addNeighbor(newNode);
 		}	
 		if(i == nNodes -1){
 			nodes[prevLength].addNeighbor(newNode);
 		}
-		*/
 	}
 }
 
@@ -73,7 +73,7 @@ function kickNeighbors(){
 	for(var i = 0; i < nodes.length; ++i){
 		if(nodes[i].prevState >=1){
 			for(var j = 0; j < nodes[i].neighbors.length; ++j){
-				nodes[i].neighbors[j].state += 0.03;
+				nodes[i].neighbors[j].state += 0.2;
 			}
 		}
 	}
