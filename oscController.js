@@ -2,10 +2,14 @@ import {SceneController} from "./base_scene_controller.js";
 import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
 
 class Node{
-	constructor(posX, posY, radius){
+	constructor(posX, posY, radius, state=0){
             this.posX = posX;
             this.posY = posY;
-            this.state = Math.random();
+	    if(state == 0){
+		this.state = Math.random();
+	    }else{
+		this.state = state;
+	    }
 	    this.prevState = this.state;
 	    this.radius = radius;
             this.neighbors = [];
@@ -26,8 +30,9 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 	var prevLength = nodes.length;
 	for(var i = 0; i < nNodes; ++i){
 		var angle = deltaAngle*i;
+		var state = angle/Math.PI; 
 		var pos = polarToCartesian(bigRadius, angle);
-		var newNode = new Node(centerX + pos[0], centerY + pos[1], littleRadius);
+		var newNode = new Node(centerX + pos[0], centerY + pos[1], littleRadius, start);
 		nodes.push(newNode);
 		/*
 		for(var j = prevLength; j < nodes.length-1; ++j){
