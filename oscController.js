@@ -69,7 +69,7 @@ function getNodes(){
 
 function updateState(){
 	for(var i = 0; i < nodes.length; ++i){
-		nodes[i].state = nodes[i].state + 0.01*(2 - (nodes[i].state*0.1));
+		nodes[i].state = nodes[i].state + 0.01*(2 - (nodes[i].state*0.3));
 		nodes[i].prevState = nodes[i].state;
 	}
 }
@@ -78,7 +78,7 @@ function kickNeighbors(){
 	for(var i = 0; i < nodes.length; ++i){
 		if(nodes[i].prevState >=1){
 			for(var j = 0; j < nodes[i].neighbors.length; ++j){
-				nodes[i].neighbors[j].state += 0.1;
+				nodes[i].neighbors[j].state += 0.05;
 			}
 		}
 	}
