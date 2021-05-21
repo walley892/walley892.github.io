@@ -30,7 +30,7 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 	var prevLength = nodes.length;
 	for(var i = 0; i < nNodes; ++i){
 		var angle = deltaAngle*i;
-		var state = angle/Math.PI; 
+		var state = angle/(2*Math.PI); 
 		var pos = polarToCartesian(bigRadius, angle);
 		var newNode = new Node(centerX + pos[0], centerY + pos[1], littleRadius, state);
 		nodes.push(newNode);
