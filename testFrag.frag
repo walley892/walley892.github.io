@@ -46,7 +46,7 @@ void main(){
 	//coord = color_func(coord);
 	float l = (complex_arg(coord) + 3.14)/6.28;
 	if(l > 0.5){
-		l = 1 - l;
+		l = 1.0 - l;
 	}
 	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/4.0, complex_mag(coord) + 0.25, l);
 	vec4 color_rgba = vec4(hsl2rgb(color_hsl),1.0);
