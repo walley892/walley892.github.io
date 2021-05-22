@@ -32,7 +32,7 @@ float complex_arg(vec2 a){
 
 vec2 color_func(vec2 a){
 	float t = (sin(u_time) + 1.0)/2.0;
-	return a + t*complex_multiply(a, a);
+	return a + 2.0*complex_multiply(a, a);
 }
 
 vec3 hsl2rgb(vec3 c){
