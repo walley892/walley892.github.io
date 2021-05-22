@@ -32,7 +32,7 @@ float complex_arg(vec2 a){
 
 vec2 color_func(vec2 a){
 	float t = (sin(u_t) + 1.0)/2.0;
-	return t*complex_multiply(a, a);
+	return (1-t)*a + t*complex_multiply(a, a);
 }
 
 vec3 hsl2rgb(vec3 c){
@@ -43,7 +43,7 @@ vec3 hsl2rgb(vec3 c){
 void main(){
 	vec2 coord = gl_FragCoord.xy/u_resolution.xy - vec2(0.5, 0.5);
 	coord = color_func(coord);
-	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/4.0, complex_mag(coord), complex_arg(coord)/6.28);
+	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/4.0, complex_mag(coord) + 0.25, complex_arg(coord)/6.28);
 	vec4 color_rgba = vec4(hsl2rgb(color_hsl),1.0);
 	gl_FragColor = color_rgba;
 }
