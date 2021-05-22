@@ -1,7 +1,7 @@
 precision mediump float;
 
 uniform vec2 u_resolution;
-uniform float u_time;
+uniform float u_t;
 
 float dist(vec2 p1, vec2 p2){
     float d1 = p1.x-p2.x;
@@ -31,7 +31,7 @@ float complex_arg(vec2 a){
 }
 
 vec2 color_func(vec2 a){
-	float t = (sin(u_time) + 1.0)/2.0;
+	float t = (sin(u_t) + 1.0)/2.0;
 	return a + t*complex_multiply(a, a);
 }
 

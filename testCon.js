@@ -5,6 +5,8 @@ class TestSceneController extends SceneController{
 	constructor(canvas, glslCanvas){
 		super(canvas, glslCanvas);
 		this.glslCanvas = glslCanvas;
+		this.T = 0;
+
 	}
 	initScene(){
 	}
@@ -12,9 +14,10 @@ class TestSceneController extends SceneController{
 		return "testFrag.frag";
 	}
 	drawScene(){
-		//this.glslCanvas.setUniform("u_state", ...(nodes.map((node) => node.state)));
+		this.glslCanvas.setUniform("u_t", this.T/20);
 	}
 	update(){
+		this.T = this.T + 1;
 	}
 }
 
