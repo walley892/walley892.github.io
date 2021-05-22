@@ -26,7 +26,7 @@ float complex_mag(vec2 a){
 }
 
 float complex_arg(vec2 a){
-	return atan2(a.y, a.x);
+	return atan(a.y, a.x);
 }
 
 vec3 hsl2rgb(vec3 c){
@@ -35,7 +35,7 @@ vec3 hsl2rgb(vec3 c){
 }
 
 void main(){
-	vec2 coord = vec2(gl_FragCoord.xy/u_resolution.xy);
+	vec2 coord = gl_FragCoord.xy/u_resolution.xy;
 	vec3 color_hsl = vec3(complex_arg(coord), 1, 0.5);
 	vec4 color_rgba = vec4(hlsl2rgb(color_hlsl),0.0);
 	gl_FragColor = color_rgba;
