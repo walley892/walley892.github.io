@@ -36,7 +36,7 @@ vec3 hsl2rgb(vec3 c){
 
 void main(){
 	vec2 coord = gl_FragCoord.xy/u_resolution.xy - vec2(0.5, 0.5);
-	vec3 color_hsl = vec3(complex_arg(coord)/6.28, 1, 0.5);
+	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/2 + 0.5, 1, 0.5);
 	vec4 color_rgba = vec4(hsl2rgb(color_hsl),1.0);
 	gl_FragColor = color_rgba;
 }
