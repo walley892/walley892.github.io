@@ -27,7 +27,8 @@ float complex_mag(vec2 a){
 }
 
 float complex_arg(vec2 a){
-	return (1.0/complex_mag(a))*atan(a.y, a.x);
+	a = (1.0/complex_mag(a))*a;
+	return atan(a.y, a.x);
 }
 
 vec2 color_func(vec2 a){
