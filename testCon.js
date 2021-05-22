@@ -14,7 +14,7 @@ class TestSceneController extends SceneController{
 		return "testFrag.frag";
 	}
 	drawScene(){
-		this.glslCanvas.setUniform("u_t", this.T/20);
+		this.glslCanvas.setUniform("u_t", this.T/50);
 	}
 	update(){
 		this.T = this.T + 1;
