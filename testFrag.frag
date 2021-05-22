@@ -43,7 +43,7 @@ vec3 hsl2rgb(vec3 c){
 
 void main(){
 	vec2 coord = gl_FragCoord.xy/u_resolution.xy - vec2(0.5, 0.5);
-	//coord = color_func(coord);
+	coord = color_func(coord);
 	float l = (complex_arg(coord) + 3.14)/6.28;
 	if(l > 0.5){
 		l = 1.0 - l;
