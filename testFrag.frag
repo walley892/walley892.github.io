@@ -33,7 +33,7 @@ float complex_arg(vec2 a){
 
 vec2 color_func(vec2 a){
 	float t = (sin(u_t) + 1.0)/2.0;
-	vec2 singOne = vec2(cos(u_t), sin(u_t));
+	vec2 singOne = 0.5*vec2(cos(u_t), sin(u_t));
 	vec2 singTwo = vec2(sin(t), cos(t));
 	//return (1.0-t)*(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0)) + t*complex_divide(complex_multiply(a, a) - vec2(1, 0),complex_multiply(a, complex_multiply(a, a)) + vec2(2, 2));
 	//return (1.0-t)*(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0)) + t*complex_divide(vec2(1,0), complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0));
