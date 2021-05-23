@@ -52,7 +52,7 @@ void main(){
 	if(l > 0.5){
 		l = 1.0 - l;
 	}
-	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/4.0, complex_mag(coord) + 0.25, l);
+	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/4.0, 1, l*0.6);
 	vec4 color_rgba = vec4(hsl2rgb(color_hsl),1.0);
 	gl_FragColor = color_rgba;
 }
