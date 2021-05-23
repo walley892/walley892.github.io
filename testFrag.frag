@@ -37,7 +37,7 @@ vec2 color_func(vec2 a){
 	vec2 singTwo = vec2(sin(t), cos(t));
 	//return (1.0-t)*(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0)) + t*complex_divide(complex_multiply(a, a) - vec2(1, 0),complex_multiply(a, complex_multiply(a, a)) + vec2(2, 2));
 	//return (1.0-t)*(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0)) + t*complex_divide(vec2(1,0), complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0));
-	return complex_divide(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0),singOne);
+	return complex_divide(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0),complex_divide(singOne, singOne));
 }
 
 vec3 hsl2rgb(vec3 c){
