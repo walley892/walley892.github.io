@@ -31,13 +31,30 @@ float complex_arg(vec2 a){
 	return atan(a.y, a.x);
 }
 
+vec2 poly_3(vec2 c, vec2[3] coeffs){
+	vec2 ret = vec2(0.0, 0.0);
+	vec2 curr = vec2(1.0, 0.0);
+	for(int i = 0; i < 3; ++i){
+		curr = complex_multiply(c, curr);
+		ret = ret + complex_multiply(coeffs[i], curr);
+	}
+	return ret;
+}
+
 vec2 color_func(vec2 a){
 	float t = (sin(u_t) + 1.0)/2.0;
 	vec2 singOne = 0.05*vec2(cos(u_t), sin(u_t));
-	vec2 singTwo = vec2(sin(t), cos(t));
-	//return (1.0-t)*(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0)) + t*complex_divide(complex_multiply(a, a) - vec2(1, 0),complex_multiply(a, complex_multiply(a, a)) + vec2(2, 2));
-	//return (1.0-t)*(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0)) + t*complex_divide(vec2(1,0), complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0));
-	return complex_divide(complex_multiply(a, complex_multiply(a, a)) - vec2(2, 0),complex_multiply(singOne, singOne));
+	vec2 singOneCoeffs[3];
+	singOneCoeffs[0] = vec2(0.0, 0.0);
+	singOneCoeffs[1] = vec2(0.0, 0.5);
+	singOneCoeffs[2] = vec2(1.0, 0.0);
+
+	vec2 aCoeffs[3];
+	aCoeffs[0] = vec2(0.0, 0.0);
+	aCoeffs[1] = vec2(0.0, 0.0);
+	aCoeffs[2] = vec2(1.0, 0.0);
+
+	return complex_divide(poly_3(a, aCoeffs) - vec2(2, 0),poly(singOne, singOneCoeffs));
 }
 
 vec3 hsl2rgb(vec3 c){
