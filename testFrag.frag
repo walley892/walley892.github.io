@@ -45,7 +45,7 @@ vec2 color_func(vec2 a){
 	float t = (sin(u_t) + 1.0)/2.0;
 	vec2 singOne = 0.05*vec2(cos(u_t), sin(u_t));
 	vec2 singOneCoeffs[3];
-	singOneCoeffs[0] = vec2(0.0, 0.0);
+	singOneCoeffs[0] = vec2(0.5, 0.0);
 	singOneCoeffs[1] = vec2(0.0, 0.5);
 	singOneCoeffs[2] = vec2(1.0, 0.0);
 
