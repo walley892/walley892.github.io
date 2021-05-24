@@ -54,7 +54,7 @@ vec2 color_func(vec2 a){
 	aCoeffs[1] = vec2(0.0, 0.0);
 	aCoeffs[2] = vec2(1.0, 0.0);
 
-	return complex_divide(poly_3(a, aCoeffs) - vec2(2, 0),poly(singOne, singOneCoeffs));
+	return complex_divide(poly_3(a, aCoeffs) - vec2(2, 0),poly_3(singOne, singOneCoeffs));
 }
 
 vec3 hsl2rgb(vec3 c){
