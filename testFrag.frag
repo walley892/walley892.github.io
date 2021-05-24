@@ -42,19 +42,18 @@ vec2 poly_3(vec2 c, vec2[3] coeffs){
 }
 
 vec2 color_func(vec2 a){
-	float t = (sin(u_t) + 1.0)/2.0;
-	vec2 singOne = 0.05*vec2(cos(u_t), sin(u_t));
+	vec2 singOne = 0.5*vec2(cos(u_t + complex_mag(a)*8.0), sin(u_t + complex_mag(a)*8.0));
 	vec2 singOneCoeffs[3];
-	singOneCoeffs[0] = vec2(0.5, 0.0);
-	singOneCoeffs[1] = vec2(0.5, 2.0);
-	singOneCoeffs[2] = vec2(1.0, 0.0);
+	singOneCoeffs[0] = vec2(0.0, 0.0);
+	singOneCoeffs[1] = vec2(1.0, 0.0);
+	singOneCoeffs[2] = vec2(0.0, 0.0);
 
 	vec2 aCoeffs[3];
 	aCoeffs[0] = vec2(0.0, 0.0);
 	aCoeffs[1] = vec2(0.0, 0.0);
 	aCoeffs[2] = vec2(1.0, 0.0);
 
-	return complex_divide(poly_3(a, aCoeffs) - vec2(2, 0),poly_3(singOne, singOneCoeffs));
+	return complex_divide(poly_3(a, aCoeffs) - vec2(0.7*cos(u_t), 0.7*sin(u_t)),poly_3(singOne, singOneCoeffs));
 }
 
 vec3 hsl2rgb(vec3 c){
