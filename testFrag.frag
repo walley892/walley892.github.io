@@ -44,7 +44,7 @@ vec2 poly_3(vec2 c, vec2[3] coeffs){
 
 vec2 color_func(vec2 a){
 	float t = (sin(u_t) + 1.0)/2.0;
-	vec2 lmao2 = -0.4*(u_mouse/u_resolution);
+	vec2 lmao2 = -0.4*(u_mouse/u_resolution) - vec2(0.4, 0.4);
 	vec2 singOne = 0.5*vec2(cos(u_t + complex_mag(a + lmao2)*8.0), sin(u_t + complex_mag(a + lmao2)*8.0));
 	vec2 lmao = 0.8*vec2(sin(u_t), cos(u_t));
 	singOne = singOne + (0.5*lmao);
