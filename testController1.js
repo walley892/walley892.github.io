@@ -1,4 +1,4 @@
-import {TestSceneController} from "./testCon.js";
+import {TestSceneController} from "./testCon1.js";
 import {loadText} from "./utils.js";
 
 class SiteController{
