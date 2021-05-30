@@ -9,8 +9,8 @@ float dist(vec2 p1, vec2 p2){
     return sqrt(d1*d1 + d2*d2);
 }
 void main(){
-	int n_x = 50;
-	int n_y = 50;
+	int n_x = 25;
+	int n_y = 25;
 	float my_x = floor((gl_FragCoord.x/u_resolution.x)* float (n_x));
 	float my_y = floor((gl_FragCoord.y/u_resolution.y)* float( n_y));
 	float c_x = my_x / (float(n_x)) + (1.0/(2.0*float(n_x)));
