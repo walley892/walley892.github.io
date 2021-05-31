@@ -57,7 +57,7 @@ void main(){
 	if(d < 0.5){
     		//gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
     		//gl_FragColor= vec4(phi(pos_normalized, 0.5).z, 0.0, 0.0, 1.0);
-		float c = dot(cross(phi_u(pos_normalized, 0.5), phi_v(pos_normalized, 0.5)), vec3(0.0, 0.0, 1.0));
+		float c = dot(cross(normalized(phi_u(pos_normalized, 0.5)), normalized(phi_v(pos_normalized, 0.5))), vec3(0.0, 0.0, 1.0));
     		gl_FragColor= vec4(c, 0.0, 0.0, 1.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
