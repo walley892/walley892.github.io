@@ -8,6 +8,12 @@ float dist(vec2 p1, vec2 p2){
     float d2 = p1.y-p2.y;
     return sqrt(d1*d1 + d2*d2);
 }
+float dist_3(vec3 p1, vec3 p2){
+    float d1 = p1.x-p2.x;
+    float d2 = p1.y-p2.y;
+    float d3 = p1.z-p2.z;
+    return sqrt(d1*d1 + d2*d2 + d3*d3);
+}
 
 float map(float x, float in_min, float in_max, float out_min, float out_max)
 {
@@ -16,6 +22,19 @@ float map(float x, float in_min, float in_max, float out_min, float out_max)
 
 vec3 phi(vec2 uv, float radius){
 	return vec3(uv.x, uv.y, sqrt(radius - uv.x*uv.x - uv.y*uv.y));
+}
+
+vec3 phi_u(vec2 uv, float radius){
+	return vec3(1.0, 0.0, (1.0/sqrt(radius - uv.x*uv.x - uv.y*uv.y)) * (-uv.x));
+}
+
+vec3 phi_v(vec2 uv, float radius){
+	return vec3(0.0, 1.0, (1.0/sqrt(radius - uv.x*uv.x - uv.y*uv.y)) * (-uv.y));
+}
+
+vec3 normalized(vec3 v){
+	float d = 1.0/dist_3(vec3(0.0, 0.0, 0.0), v);
+	return vec3(d*v.x, d*v.y, d*v.z);
 }
 
 
@@ -37,7 +56,9 @@ void main(){
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	if(d < 0.5){
     		//gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
-    		gl_FragColor= vec4(phi(pos_normalized, 0.5).z, 0.0, 0.0, 1.0);
+    		//gl_FragColor= vec4(phi(pos_normalized, 0.5).z, 0.0, 0.0, 1.0);
+		float c = dot(cross(phi_u(pos_normalized, 0.5), phi_v(pos_normalized, 0.5)), vec3(0.0, 0.0, 1.0));
+    		gl_FragColor= vec4(c, 0.0, 0.0, 1.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}
