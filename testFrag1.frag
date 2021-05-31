@@ -54,7 +54,7 @@ void main(){
 	float c_x = my_x / (float(n_x)) + (1.0/(2.0*float(n_x)));
 	float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
 	vec3 normalized_mouse_pos = vec3(1.5*(u_mouse.x/u_resolution.x - c_x), 1.5*(u_mouse.y/u_resolution.y - c_y), 1.0);
-	float light_d = dist(normalized_mouse_pos, pos_normalized);
+	float light_d = dist_3(normalized_mouse_pos, phi(pos_normalized, 0.3));
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	if(d < 0.3){
 		float c = dot(cross(normalized(phi_u(pos_normalized, 0.3)), normalized(phi_v(pos_normalized, 0.3))), normalized(normalized_mouse_pos -phi(pos_normalized, 0.3)));
