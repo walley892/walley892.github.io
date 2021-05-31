@@ -15,7 +15,7 @@ float map(float x, float in_min, float in_max, float out_min, float out_max)
 }
 
 vec3 phi(vec2 uv){
-	return vec3(uv.x, uv.y, 1 - sqrt(1.0 - uv.x*uv.x - uv.y*uv.y));
+	return vec3(uv.x, uv.y, 1.0 - sqrt(1.0 - uv.x*uv.x - uv.y*uv.y));
 }
 
 
