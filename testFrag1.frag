@@ -39,8 +39,8 @@ vec3 normalized(vec3 v){
 
 
 void main(){
-	int n_x = int(floor(25.0 * (cos(u_t/2.0) + 2.0)/2.0));
-	int n_y = int(floor(25.0 * (cos(u_t/2.0) + 2.0)/2.0));
+	int n_x = 15;
+	int n_y = 15;
 	float my_x = floor((gl_FragCoord.x/u_resolution.x)* float (n_x));
 	float my_y = floor((gl_FragCoord.y/u_resolution.y)* float( n_y));
 	
