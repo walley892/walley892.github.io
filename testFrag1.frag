@@ -30,11 +30,11 @@ void main(){
 
 	vec2 pos_raw = gl_FragCoord.xy/u_resolution.xy;
 
-	vec2 pos_normalized = vec2(map(pos_raw.x, my_x/float(n_x), my_x/float(n_x) + len_x, 0.0, 1.0),  map(pos_raw.y, my_y/float(n_y), my_y/float(n_y) + len_y, 0.0, 1.0)); 
+	vec2 pos_normalized = vec2(map(pos_raw.x, my_x/float(n_x), my_x/float(n_x) + len_x, 0.0, 1.0),  map(pos_raw.y, my_y/float(n_y), my_y/float(n_y) + len_y, 0.0, 1.0)) - vec2(0.5, 0.5); 
 
 	//float c_x = my_x / (float(n_x)) + (1.0/(2.0*float(n_x)));
 	//float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
-	float d = dist(vec2(0.5, 0.5), pos_normalized);
+	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	if(d < 0.5){
     		//gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
     		gl_FragColor= vec4(phi(pos_normalized).z, 0.0, 0.0, 1.0);
