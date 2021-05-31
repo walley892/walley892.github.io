@@ -30,7 +30,7 @@ void main(){
 	//float c_x = my_x / (float(n_x)) + (1.0/(2.0*float(n_x)));
 	//float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
 	float d = dist(vec2(0.5, 0.5), pos_normalized);
-	if(d < 1.0){
+	if(d < 0.5){
     		gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
 		gl_FragColor = vec4(1.0,0.0,0.0,0.0);
 	}else{
