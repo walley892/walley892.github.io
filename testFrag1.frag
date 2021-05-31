@@ -36,8 +36,8 @@ void main(){
 	//float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	if(d < 0.5){
-    		//gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
-    		gl_FragColor= vec4(phi(pos_normalized).z, 0.0, 0.0, 1.0);
+    		gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
+    		//gl_FragColor= vec4(phi(pos_normalized).z, 0.0, 0.0, 1.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}
