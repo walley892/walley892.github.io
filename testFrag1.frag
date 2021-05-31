@@ -32,7 +32,6 @@ void main(){
 	float d = dist(vec2(0.5, 0.5), pos_normalized);
 	if(d < 0.5){
     		gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
-		gl_FragColor = vec4(1.0,0.0,0.0,0.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}
