@@ -14,6 +14,11 @@ float map(float x, float in_min, float in_max, float out_min, float out_max)
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
+vec3 phi(vec2 uv){
+	return vec3(uv.x, uv.y, sqrt(1.0 - uv.x*uv.x - uv.y*uv.y) - 1.0);
+}
+
+
 void main(){
 	int n_x = int(floor(25.0 * (cos(u_t/2.0) + 2.0)/2.0));
 	int n_y = int(floor(25.0 * (cos(u_t/2.0) + 2.0)/2.0));
@@ -31,7 +36,8 @@ void main(){
 	//float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
 	float d = dist(vec2(0.5, 0.5), pos_normalized);
 	if(d < 0.5){
-    		gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
+    		//gl_FragColor= vec4(0.005/(0.005+pow(d,3.0)), 0.0, 0.0, 1.0);
+    		gl_FragColor= vec4(phi(pos_normalized).z, 0.0, 0.0, 1.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}
