@@ -42,8 +42,8 @@ float when_lt(float a, float b){
 }
 
 void main(){
-	int n_x = 12;
-	int n_y = 12;
+	int n_x = 30;
+	int n_y = 30;
 	float my_x = floor((gl_FragCoord.x/u_resolution.x)* float (n_x));
 	float my_y = floor((gl_FragCoord.y/u_resolution.y)* float( n_y));
 	
