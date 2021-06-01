@@ -37,6 +37,9 @@ vec3 normalized(vec3 v){
 	return vec3(d*v.x, d*v.y, d*v.z);
 }
 
+bool when_lt(float a, float b){
+	return max(abs(sign(b - a)), 0.0);
+}
 
 void main(){
 	int n_x = 12;
