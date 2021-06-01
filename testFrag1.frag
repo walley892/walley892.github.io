@@ -59,7 +59,7 @@ void main(){
 	vec3 normalized_mouse_pos = vec3(1.0*(u_mouse.x/u_resolution.x - c_x), 1.0*(u_mouse.y/u_resolution.y - c_y), 0.75);
 	float light_d = dist_3(normalized_mouse_pos, vec3(pos_normalized.x, pos_normalized.y, 0.5));
 	pos_normalized = pos_normalized - 0.2*(light_d)*(normalized_mouse_pos.xy - pos_normalized);
-	light_d = dist(normalized_mouse_pos.xy, pos_normalized.xy);
+	light_d = dist_3(normalized_mouse_pos, vec3(pos_normalized.x, pos_normalized.y, 0.5));
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	float s = when_lt(d, 0.05);
 	if(d < 0.4){
