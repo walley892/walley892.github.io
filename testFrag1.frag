@@ -59,7 +59,7 @@ void main(){
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	if(d < 0.3){
 		float c = dot(cross(normalized(phi_u(pos_normalized, 0.3)), normalized(phi_v(pos_normalized, 0.3))), -normalized(normalized_mouse_pos +phi(pos_normalized, 0.3)));
-    		gl_FragColor= vec4(acos(c)/3.0, 0.0, 0.0, 1.0);
+    		gl_FragColor= vec4(acos(c)/5.0, 0.0, 0.0, 1.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}	
