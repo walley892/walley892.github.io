@@ -62,7 +62,7 @@ void main(){
 	light_d = dist(normalized_mouse_pos.xy, pos_normalized.xy);
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	float s = when_lt(d, 0.05);
-	if(d < 0.2){
+	if(d < 0.3){
 		float c = dot(cross(normalized(phi_u(pos_normalized, 0.1)), normalized(phi_v(pos_normalized, 0.1))), normalized(normalized_mouse_pos -phi(pos_normalized, 0.1)));
     		gl_FragColor= vec4(acos(c)/3.0, 0.0, 0.0, 1.0);
 	}else{
