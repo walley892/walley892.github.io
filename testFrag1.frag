@@ -39,8 +39,8 @@ vec3 normalized(vec3 v){
 
 
 void main(){
-	int n_x = 5;
-	int n_y = 5;
+	int n_x = 12;
+	int n_y = 12;
 	float my_x = floor((gl_FragCoord.x/u_resolution.x)* float (n_x));
 	float my_y = floor((gl_FragCoord.y/u_resolution.y)* float( n_y));
 	
@@ -59,7 +59,7 @@ void main(){
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
 	if(d < 0.3){
 		float c = dot(cross(normalized(phi_u(pos_normalized, 0.3)), normalized(phi_v(pos_normalized, 0.3))), normalized(normalized_mouse_pos -phi(pos_normalized, 0.3)));
-    		gl_FragColor= vec4(acos(c)/5.0, 0.0, 0.0, 1.0);
+    		gl_FragColor= vec4(acos(c)/3.0, 0.0, 0.0, 1.0);
 	}else{
 		gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}	
