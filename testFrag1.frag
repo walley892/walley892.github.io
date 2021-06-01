@@ -55,10 +55,10 @@ void main(){
 	float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
 	vec3 normalized_mouse_pos = vec3(1.5*(u_mouse.x/u_resolution.x - c_x), 1.5*(u_mouse.y/u_resolution.y - c_y), 1.0);
 	float light_d = dist(normalized_mouse_pos.xy, pos_normalized.xy);
-	pos_normalized = pos_normalized + (1.0/(1.0 + light_d))*(normalized_mouse_pos.xy - pos_normalized);
+	pos_normalized = pos_normalized + (1.0/(1.0 + 10.0*light_d))*(normalized_mouse_pos.xy - pos_normalized);
 	light_d = dist(normalized_mouse_pos.xy, pos_normalized.xy);
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
-	if(d < 0.3){
+	if(d < 0.1){
 		float c = dot(cross(normalized(phi_u(pos_normalized, 0.3)), normalized(phi_v(pos_normalized, 0.3))), -normalized(normalized_mouse_pos +phi(pos_normalized, 0.3)));
     		gl_FragColor= vec4(acos(c)/5.0, 0.0, 0.0, 1.0);
 	}else{
