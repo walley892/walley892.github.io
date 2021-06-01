@@ -38,7 +38,7 @@ vec3 normalized(vec3 v){
 }
 
 bool when_lt(float a, float b){
-	return max(abs(sign(b - a)), 0.0);
+	return bool(max(abs(sign(b - a)), 0.0));
 }
 
 void main(){
