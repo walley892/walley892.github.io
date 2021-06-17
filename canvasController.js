@@ -5,8 +5,6 @@ class SiteController{
 	constructor(){
 		this.canvas = document.getElementById("mainCanvas");
 		this.glslCanvas = new GlslCanvas(this.canvas);
-		this.canvas.width = document.documentElement.clientWidth;
-		this.canvas.height = document.documentElement.clientHeight;
 		this.activeScene = null;
 	}
 	setScene(sceneControllerCls){
