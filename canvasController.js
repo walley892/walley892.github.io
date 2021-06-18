@@ -4,6 +4,8 @@ import {loadText} from "./utils.js";
 class SiteController{
 	constructor(){
 		this.canvas = document.getElementById("mainCanvas");
+		this.canvas.height = this.canvas.cleintHeight;
+		this.canvas.width = this.canvas.cleintWidth;
 		this.glslCanvas = new GlslCanvas(this.canvas);
 		this.activeScene = null;
 	}
