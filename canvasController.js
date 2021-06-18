@@ -4,9 +4,9 @@ import {loadText} from "./utils.js";
 class SiteController{
 	constructor(){
 		this.canvas = document.getElementById("mainCanvas");
+		this.glslCanvas = new GlslCanvas(this.canvas);
 		this.canvas.height = this.canvas.cleintHeight;
 		this.canvas.width = this.canvas.cleintWidth;
-		this.glslCanvas = new GlslCanvas(this.canvas);
 		this.activeScene = null;
 	}
 	setScene(sceneControllerCls){
