@@ -27,7 +27,7 @@ class SiteController{
 	}
 }
 
-document.onload = function(){
+window.onload = function(){
 
 var siteController = new SiteController();
 
