@@ -26,8 +26,11 @@ class SiteController{
 	}
 }
 
+document.onload = function(){
+
 var siteController = new SiteController();
 
 siteController.setScene(OscSceneController);
 siteController.startActiveScene();
 export {siteController};
+};
