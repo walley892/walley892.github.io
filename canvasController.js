@@ -21,11 +21,9 @@ class SiteController{
 			this.canvas.removeEventListener('click', this._clickListener);
 		}
 		this._clickListener = function(event){
-			alert(event.clientX/this.canvas.height);
-			alert(event.clientY/this.canvas.width);
 			this.activeScene.onClick.bind(this.activeScene)(
-				event.clientX/this.canvas.height,
-				event.clientY/this.canvas.width,
+				event.clientX/this.canvas.width,
+				event.clientY/this.canvas.height,
 			);
 		}.bind(this);
 		this.canvas.addEventListener("click", this._clickListener);
