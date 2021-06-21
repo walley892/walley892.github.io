@@ -27,6 +27,7 @@ class SiteController{
 		);
 	}
 	fadeOut(){
+		/*
 		this.fadeTimerId = window.setInterval(
 			function() {
 				var currentColorStr = this.overlay.style.backgroundColor;
@@ -40,6 +41,8 @@ class SiteController{
 			}.bind(this),
 			100,
 		);
+		*/
+		this.overlay.style.backgroundColor = "rgba(1, 1, 1, 1)";
 	}
 }
 
