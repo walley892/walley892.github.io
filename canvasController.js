@@ -28,7 +28,7 @@ class SiteController{
 	}
 	fadeOut(){
 		this.fadeTimerId = window.setInterval(
-			() => {
+			function() {
 				var currentColorStr = this.overlay.style.backgroundColor;
 				var opacStr = currentColorStr.split(",")[3];
 				var opac = Number(opacStr.slice(0, opacStr.length-1));
