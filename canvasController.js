@@ -20,7 +20,7 @@ class SiteController{
 		if(this._clickLisetner != null){
 			this.canvas.removeEventListener('click', this._clickListener);
 		}
-		this._clickListener = function(){
+		this._clickListener = function(event){
 			this.activeScene.onClick.bind(this.activeScene)(
 				event.clientX/this.canvas.height,
 				event.clientY/this.canvas.width,
