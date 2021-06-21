@@ -25,7 +25,7 @@ class SiteController{
 				event.pageX/this.canvas.height,
 				event.pageY/this.canvas.width,
 			)
-		}.bind(this.activeScene);
+		}.bind(this);
 		this.canvas.addEventListener("click", this._clickListener);
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
 	}
