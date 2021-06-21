@@ -27,6 +27,7 @@ class SiteController{
 			);
 		}.bind(this);
 		this.canvas.addEventListener("click", this._clickListener);
+		this.activeScene.placeHtml();
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
 	}
 	startActiveScene(){
@@ -48,9 +49,10 @@ class SiteController{
 	}
 	switchScene(newSceneCls){
 		this.fadeOut();
-		window.setTimeout(this.setScene.bind(this), 2000, newSceneCls);
-		window.setTimeout(this.startActiveScene.bind(this), 2050);
-		window.setTimeout(this.fadeIn.bind(this), 2100);
+		window.setTimeout(this.activeScene.tearDownHtml.bind(this.activeScene), 2000, newSceneCls);
+		window.setTimeout(this.setScene.bind(this), 2050, newSceneCls);
+		window.setTimeout(this.startActiveScene.bind(this), 2100);
+		window.setTimeout(this.fadeIn.bind(this), 2150);
 	}
 	switchSceneString(sceneString){
 		var cls = null;

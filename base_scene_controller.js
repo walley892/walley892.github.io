@@ -3,6 +3,8 @@ class SceneController {
 		this.canvas = canvas;
 		this.glslCanvas = glslCanvas;
 	}
+	placeHtml(){}
+	tearDownHtml(){}
 	initScene(){}
 	fragFile(){}	
 	drawScene(){}
