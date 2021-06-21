@@ -14,11 +14,10 @@ class SiteController{
 		this.activeScene = null;
 		this.canvas.addEventListener("click", function(){
 			
-			//this.activeScene.onClick(
-			//	event.pageX/this.canvas.height,
-			//	event.pageY/this.canvas.width,
-			//)
-			alert("lmao");
+			this.activeScene.onClick(
+				event.pageX/this.canvas.height,
+				event.pageY/this.canvas.width,
+			)
 		}.bind(this));
 	}
 	setScene(sceneControllerCls){
