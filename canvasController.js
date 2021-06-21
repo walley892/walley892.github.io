@@ -35,9 +35,9 @@ class SiteController{
 	}
 	switchScene(newSceneCls){
 		this.fadeOut();
-		this.setScene(newSceneCls);
-		this.startActiveScene();
-		window.setTimeout(this.fadeIn.bind(this), 2000);
+		window.setTimeout(this.setScene.bind(this), 2000, newSceneCls);
+		window.setTimeout(this.startActiveScene.bind(this), 2050);
+		window.setTimeout(this.fadeIn.bind(this), 2100);
 	}
 }
 
