@@ -1,5 +1,6 @@
-import {OscSceneController} from "./oscController.js";
 import {loadText} from "./utils.js";
+import {OscSceneController} from "./oscController.js";
+import {TestSceneController} from "./testCon.js";
 
 class SiteController{
 	constructor(){
@@ -34,6 +35,8 @@ class SiteController{
 	}
 	switchScene(newSceneCls){
 		this.fadeOut();
+		this.setScene(newSceneCls);
+		this.startActiveScene();
 		window.setTimeout(this.fadeIn.bind(this), 2000);
 	}
 }
@@ -44,5 +47,5 @@ var siteController = new SiteController();
 
 siteController.setScene(OscSceneController);
 siteController.startActiveScene();
-siteController.switchScene(null);
+siteController.switchScene(TestSceneController);
 };
