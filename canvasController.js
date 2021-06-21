@@ -1,6 +1,7 @@
 import {loadText} from "./utils.js";
 import {OscSceneController} from "./oscController.js";
-import {TestSceneController} from "./testCon.js";
+import {DomainSceneController} from "./domainController.js";
+import {EyeSceneController} from "./eyeController.js";
 
 class SiteController{
 	constructor(){
@@ -39,6 +40,17 @@ class SiteController{
 		window.setTimeout(this.startActiveScene.bind(this), 2050);
 		window.setTimeout(this.fadeIn.bind(this), 2100);
 	}
+	switchSceneString(sceneString){
+		var cls = null;
+		if(sceneString == "osc"){
+			cls = OscSceneController;
+		}else if(sceneString == "domain"){
+			cls = DomainSceneController;
+		}else if(sceneString == "eye"){
+			cls = EyeSceneController;
+		}
+		this.switchScene(cls);
+	}
 }
 
 window.onload = function(){
@@ -47,5 +59,5 @@ var siteController = new SiteController();
 
 siteController.setScene(OscSceneController);
 siteController.startActiveScene();
-siteController.switchScene(TestSceneController);
+siteController.switchSceneString("domain");
 };
