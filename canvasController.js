@@ -21,10 +21,10 @@ class SiteController{
 			this.canvas.removeEventListener('click', this._clickListener);
 		}
 		this._clickListener = function(){
-			this.activeScene.onClick(
+			this.activeScene.onClick.bind(this.activeScene)(
 				event.pageX/this.canvas.height,
 				event.pageY/this.canvas.width,
-			)
+			);
 		}.bind(this);
 		this.canvas.addEventListener("click", this._clickListener);
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
