@@ -13,12 +13,11 @@ class SiteController{
 		this.canvas.width = body.clientWidth;
 		this.activeScene = null;
 		this.canvas.addEventListener("click", function(){
-			
 			this.activeScene.onClick(
 				event.pageX/this.canvas.height,
 				event.pageY/this.canvas.width,
 			)
-		}.bind(this));
+		}.bind(this.activeScene));
 	}
 	setScene(sceneControllerCls){
 		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas);
