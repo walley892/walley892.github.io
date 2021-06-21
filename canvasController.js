@@ -33,7 +33,7 @@ class SiteController{
 				var opacStr = currentColorStr.split(",")[3];
 				var opac = Number(opacStr.slice(0, opacStr.length-1));
 				opac = Math.min(opac + 0.05, 1);
-				this.overlay.backgroundColor = "rgba(1, 1, 1, " + String(opac) + ")";
+				this.overlay.style.backgroundColor = "rgba(1, 1, 1, " + String(opac) + ")";
 				if(opac == 1){
 					window.clearInterval(this.fadeTimerId);
 				}
