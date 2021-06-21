@@ -27,22 +27,14 @@ class SiteController{
 		);
 	}
 	fadeOut(){
-		/*
-		this.fadeTimerId = window.setInterval(
-			function() {
-				var currentColorStr = this.overlay.style.backgroundColor;
-				var opacStr = currentColorStr.split(",")[3];
-				var opac = Number(opacStr.slice(0, opacStr.length-1));
-				opac = Math.min(opac + 0.05, 1);
-				this.overlay.style.backgroundColor = "rgba(1, 1, 1, " + String(opac) + ")";
-				if(opac == 1){
-					window.clearInterval(this.fadeTimerId);
-				}
-			}.bind(this),
-			100,
-		);
-		*/
 		this.overlay.style.backgroundColor = "rgba(1, 1, 1, 1)";
+	}
+	fadeIn(){
+		this.overlay.style.backgroundColor = "rgba(1, 1, 1, 0)";
+	}
+	switchScene(newSceneCls){
+		fadeOut();
+		window.setTimeout(this.fadeIn.bind(this), 2000);
 	}
 }
 
@@ -52,5 +44,5 @@ var siteController = new SiteController();
 
 siteController.setScene(OscSceneController);
 siteController.startActiveScene();
-siteController.fadeOut();
+siteController.switchScene(null);
 };
