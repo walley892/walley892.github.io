@@ -18,7 +18,7 @@ class SiteController{
 			//	event.pageX/this.canvas.height,
 			//	event.pageY/this.canvas.width,
 			//)
-			this.switchSceneString("domain");
+			alert("lmao");
 		}.bind(this));
 	}
 	setScene(sceneControllerCls){
