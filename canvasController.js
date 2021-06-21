@@ -8,19 +8,25 @@ class SiteController{
 		this.canvas = document.getElementById("mainCanvas");
 		this.glslCanvas = new GlslCanvas(this.canvas);
 		var body = document.getElementById("main_body");
+		this._clickListener = null;
 		this.overlay = document.getElementById("overlay");
 		this.canvas.height = body.clientHeight; 
 		this.canvas.width = body.clientWidth;
 		this.activeScene = null;
-		this.canvas.addEventListener("click", function(){
+		
+	}
+	setScene(sceneControllerCls){
+		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas);
+		if(this._clickLisetner != null){
+			this.canvas.removeEventListener('click', this._clickListener);
+		}
+		this._clickListener = function(){
 			this.activeScene.onClick(
 				event.pageX/this.canvas.height,
 				event.pageY/this.canvas.width,
 			)
-		}.bind(this.activeScene));
-	}
-	setScene(sceneControllerCls){
-		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas);
+		}.bind(this.activeScene);
+		this.canvas.addEventListener("click", this._clickListener);
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
 	}
 	startActiveScene(){
