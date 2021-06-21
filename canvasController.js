@@ -12,7 +12,7 @@ class SiteController{
 		this.canvas.height = body.clientHeight; 
 		this.canvas.width = body.clientWidth;
 		this.activeScene = null;
-		this.canvas.addEventListener("click", function(event){
+		this.canvas.addEventListener("click", function(){
 			
 			//this.activeScene.onClick(
 			//	event.pageX/this.canvas.height,
