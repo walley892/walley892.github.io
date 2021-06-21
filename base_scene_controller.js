@@ -7,6 +7,7 @@ class SceneController {
 	fragFile(){}	
 	drawScene(){}
 	update(){}
+	onClick(x, y){}
 }
 
 export {SceneController};

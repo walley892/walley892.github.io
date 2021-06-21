@@ -147,7 +147,7 @@ class OscSceneController extends SceneController{
 		this.canvasController = canvasController;
 	}
 	onClick(x, y){
-		this.canvasController.setSceneString("domain");
+		this.canvasController.switchSceneString("domain");
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
