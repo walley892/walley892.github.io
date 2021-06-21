@@ -33,7 +33,7 @@ class SiteController{
 		this.overlay.style.backgroundColor = "rgba(1, 1, 1, 0)";
 	}
 	switchScene(newSceneCls){
-		fadeOut();
+		this.fadeOut();
 		window.setTimeout(this.fadeIn.bind(this), 2000);
 	}
 }
