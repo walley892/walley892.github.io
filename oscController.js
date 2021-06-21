@@ -140,6 +140,12 @@ function drawOscNode(node, canvas){
 	ctx.fill();
 }
 
+function distance(x1, y1, x2, y2){
+	var x = x1 - x2;
+	var y = y1 - y2;
+	return Math.sqrt(x*x + y*y);
+}
+
 class OscSceneController extends SceneController{
 	constructor(canvas, glslCanvas, canvasController){
 		super(canvas, glslCanvas);
@@ -147,7 +153,9 @@ class OscSceneController extends SceneController{
 		this.canvasController = canvasController;
 	}
 	onClick(x, y){
-		this.canvasController.switchSceneString("domain");
+		if(distance(x, y, nodes[nodes.length-1].posX, nodes[nodes.length-1].posY) < nodes[nodes.length-1].radius){
+			this.canvasController.switchSceneString("domain");
+		}
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
