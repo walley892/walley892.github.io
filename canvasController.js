@@ -16,7 +16,7 @@ class SiteController{
 		
 	}
 	setScene(sceneControllerCls){
-		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas);
+		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas, this);
 		if(this._clickLisetner != null){
 			this.canvas.removeEventListener('click', this._clickListener);
 		}
