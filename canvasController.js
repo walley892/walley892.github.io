@@ -12,6 +12,12 @@ class SiteController{
 		this.canvas.height = body.clientHeight; 
 		this.canvas.width = body.clientWidth;
 		this.activeScene = null;
+		this.canvas.addEventListener("click", function(event){
+			this.activeScene.onClick(
+				event.pageX/this.canvas.height,
+				event.pageY/this.canvas.width,
+			)
+		}.bind(this));
 	}
 	setScene(sceneControllerCls){
 		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas);
@@ -59,5 +65,4 @@ var siteController = new SiteController();
 
 siteController.setScene(OscSceneController);
 siteController.startActiveScene();
-siteController.switchSceneString("domain");
 };

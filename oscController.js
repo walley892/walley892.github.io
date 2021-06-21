@@ -141,9 +141,13 @@ function drawOscNode(node, canvas){
 }
 
 class OscSceneController extends SceneController{
-	constructor(canvas, glslCanvas){
+	constructor(canvas, glslCanvas, canvasController){
 		super(canvas, glslCanvas);
 		this.glslCanvas = glslCanvas;
+		this.canvasController = canvasController;
+	}
+	onClick(x, y){
+		this.canvasController.setSceneString("domain");
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
