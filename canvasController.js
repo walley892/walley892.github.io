@@ -13,10 +13,12 @@ class SiteController{
 		this.canvas.width = body.clientWidth;
 		this.activeScene = null;
 		this.canvas.addEventListener("click", function(event){
-			this.activeScene.onClick(
-				event.pageX/this.canvas.height,
-				event.pageY/this.canvas.width,
-			)
+			
+			//this.activeScene.onClick(
+			//	event.pageX/this.canvas.height,
+			//	event.pageY/this.canvas.width,
+			//)
+			this.switchSceneString("domain");
 		}.bind(this));
 	}
 	setScene(sceneControllerCls){
