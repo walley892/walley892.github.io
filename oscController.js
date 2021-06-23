@@ -73,6 +73,7 @@ function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
 		var target_width = (w_radius * 2)/3;
 		height = target_width/(0.6*element.innerHTML.length);
 	}
+	element.style.position = "absolute";
 	element.style.fontSize = String(height) + "px";
 	element.style.height = String(height) + "px";
 	element.style.left = String(centerX * canvas.clientWidth - element.clientWidth/2) + "px";
