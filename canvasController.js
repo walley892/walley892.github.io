@@ -27,11 +27,11 @@ class SiteController{
 			);
 		}.bind(this);
 		this.canvas.addEventListener("click", this._clickListener);
-		this.activeScene.placeHtml();
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
 	}
 	startActiveScene(){
 		this.activeScene.initScene();
+		this.activeScene.placeHtml();
 		this.activeSceneUpdate = window.setInterval(
 			this.activeScene.update.bind(this.activeScene),
 			20

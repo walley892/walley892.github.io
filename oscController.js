@@ -63,6 +63,22 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 }
 
 
+function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
+	var w_radius = radius*canvas.clientWidth;
+	var h_radius = radius*canvas.clientHeight;
+	var height = 0;
+	if(h_radius > w_radius){
+		height = h_radius/1.2;
+	}else{
+		var target_width = (w_radius * 2)/3;
+		height = target_width/(0.6*element.innerHTML.length);
+	}
+	element.style.fontSize = String(height) + "px";
+	element.style.height = String(height) + "px";
+	element.style.left = String(centerX * canvas.clientWidth - element.clientWidth/2) + "px";
+	element.style.bottom = String(centerY * canvas.clientHeight - element.clientHeight/2) + "px";
+}
+
 function getNodes(){
 	return nodes;
 }
@@ -150,7 +166,13 @@ class OscSceneController extends SceneController{
 	constructor(canvas, glslCanvas, canvasController){
 		super(canvas, glslCanvas);
 		this.glslCanvas = glslCanvas;
+		this.canvas = canvas;
 		this.canvasController = canvasController;
+	}
+	placeHtml(){
+		var text = document.createElement("p");
+		text.innerHTML = "sample";
+		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, element, this.canvas);	
 	}
 	onClick(x, y){
 		if(distance(x, y, nodes[nodes.length-1].posX, nodes[nodes.length-1].posY) < nodes[nodes.length-1].radius){
