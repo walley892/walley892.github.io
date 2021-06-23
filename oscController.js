@@ -68,7 +68,7 @@ function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
 	var h_radius = radius*canvas.clientHeight;
 	var height = 0;
 	if(h_radius > w_radius){
-		height = h_radius/0.8;
+		height = h_radius;
 	}else{
 		var target_width = w_radius/0.8;
 		height = (target_width*0.6)/(element.innerHTML.length);
