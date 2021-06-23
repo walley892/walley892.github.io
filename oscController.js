@@ -173,7 +173,7 @@ class OscSceneController extends SceneController{
 		var text = document.createElement("p");
 		text.innerHTML = "sample";
 		document.body.appendChild(text);
-		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, text, this.canvas);	
+		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, text);	
 	}
 	onClick(x, y){
 		if(distance(x, y, nodes[nodes.length-1].posX, nodes[nodes.length-1].posY) < nodes[nodes.length-1].radius){
