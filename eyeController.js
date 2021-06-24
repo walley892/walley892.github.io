@@ -11,6 +11,7 @@ class EyeSceneController extends SceneController{
 	createHtml(){
 		var img = document.createElement("img");
 		img.src = "./earth.jpg";
+		document.appendChild(img);
 	}
 	placeHtml(){
 
