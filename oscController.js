@@ -167,12 +167,28 @@ class OscSceneController extends SceneController{
 		this.glslCanvas = glslCanvas;
 		this.canvas = canvas;
 		this.canvasController = canvasController;
+		this._elements = [];
+	}
+	createHtml(){
+		this._elements.push(document.createElement("p"));
+		this._elements.push(document.createElement("p"));
+		this._elements.push(document.createElement("p"));
+		this._elements[0].innerHtml = "about";
+		this._elements[1].innerHtml = "evan :)";
+		this._elements[2].innerHtml = "projects";
+
+		document.body.appendChild(this._elements[0]);
+		document.body.appendChild(this._elements[1]);
+		document.body.appendChild(this._elements[2]);
+		this.placeHtml();
 	}
 	placeHtml(){
-		var text = document.createElement("p");
-		text.innerHTML = "sample";
-		document.body.appendChild(text);
-		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, text);
+		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[0]);
+		sizeAndPlaceElementInCircle(nodes[22].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[1]);
+		sizeAndPlaceElementInCircle(nodes[19].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[2]);
+	}
+	destroyHtml(){
+
 	}
 	onClick(x, y){
 		if(distance(x, y, nodes[nodes.length-1].posX, nodes[nodes.length-1].posY) < nodes[nodes.length-1].radius){

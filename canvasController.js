@@ -31,7 +31,7 @@ class SiteController{
 	}
 	startActiveScene(){
 		this.activeScene.initScene();
-		this.activeScene.placeHtml();
+		this.activeScene.createHtml();
 		this.activeSceneUpdate = window.setInterval(
 			this.activeScene.update.bind(this.activeScene),
 			20
