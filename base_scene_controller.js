@@ -3,6 +3,7 @@ class SceneController {
 		this.canvas = canvas;
 		this.glslCanvas = glslCanvas;
 	}
+	createHtml(){}
 	placeHtml(){}
 	tearDownHtml(){}
 	initScene(){}
