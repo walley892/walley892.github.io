@@ -75,5 +75,8 @@ void main(){
 	}
 	vec3 color_hsl = vec3((complex_arg(coord)/6.28)/4.0, 1, l*0.6);
 	vec4 color_rgba = vec4(hsl2rgb(color_hsl),1.0);
-	gl_FragColor = color_rgba;
+	gl_FragColor = color_rgba;	
+	vec2 pos_raw = gl_FragCoord.xy/u_resolution.xy;
+	float di = dist(pos_raw, vec2(u_mouse.x/u_resolution.x, u_mouse.y/u_resolution.y));
+	gl_FragColor.w = 1.3 - exp(0.2/pow(di, 1.1))*0.05;
 }
