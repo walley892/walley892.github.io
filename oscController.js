@@ -65,7 +65,7 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 
 function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
 	var w_radius = radius*canvas.width;
-	alert(canvas.width);
+	alert(canvas.height);
 	var h_radius = radius*canvas.height;
 	var height = 0;
 	if(h_radius > w_radius){
