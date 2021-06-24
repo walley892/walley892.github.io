@@ -175,9 +175,9 @@ class OscSceneController extends SceneController{
 		this._elements.push(document.createElement("p"));
 		this._elements.push(document.createElement("p"));
 		this._elements[0].innerHTML = "projects";
-		this._elements[1].innerHTML = "hey";
+		this._elements[1].innerHTML = "I'm evan :)";
 		this._elements[2].innerHTML = "about";
-		this._elements[3].innerHTML = "I'm evan :)";
+		//this._elements[3].innerHTML = "I'm evan :)";
 		for(var i = 0; i < this._elements.length; ++i){
 			this._elements[i].style.color = "black";
 		}
@@ -185,14 +185,14 @@ class OscSceneController extends SceneController{
 		document.body.appendChild(this._elements[0]);
 		document.body.appendChild(this._elements[1]);
 		document.body.appendChild(this._elements[2]);
-		document.body.appendChild(this._elements[3]);
+		//document.body.appendChild(this._elements[3]);
 		this.placeHtml();
 	}
 	placeHtml(){
 		sizeAndPlaceElementInCircle(nodes[19].posX, nodes[19].posY, nodes[19].radius, this.canvas, this._elements[0]);
 		sizeAndPlaceElementInCircle(nodes[20].posX, nodes[20].posY, nodes[20].radius, this.canvas, this._elements[1]);
 		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[2]);
-		sizeAndPlaceElementInCircle(nodes[22].posX, nodes[22].posY, nodes[22].radius, this.canvas, this._elements[3]);
+		//sizeAndPlaceElementInCircle(nodes[22].posX, nodes[22].posY, nodes[22].radius, this.canvas, this._elements[3]);
 	}
 	destroyHtml(){
 
