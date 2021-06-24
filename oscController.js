@@ -187,10 +187,10 @@ class OscSceneController extends SceneController{
 		document.body.appendChild(this._elements[2]);
 		this._elements[0].addEventListener('click', function(){
 			this.canvasController.switchSceneString("eye");
-		});
+		}.bind(this));
 		this._elements[2].addEventListener('click', function(){
 			this.canvasController.switchSceneString("domain");
-		});
+		}.bind(this));
 
 		//document.body.appendChild(this._elements[3]);
 		this.placeHtml();
