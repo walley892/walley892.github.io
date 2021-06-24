@@ -178,6 +178,9 @@ class OscSceneController extends SceneController{
 		this._elements[1].innerHTML = "hey";
 		this._elements[2].innerHTML = "about";
 		this._elements[3].innerHTML = "I'm evan :)";
+		for(var i = 0; i < this._elements.length; ++i){
+			this._elements[i].style.color = "black";
+		}
 
 		document.body.appendChild(this._elements[0]);
 		document.body.appendChild(this._elements[1]);
