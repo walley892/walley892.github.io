@@ -203,7 +203,7 @@ class OscSceneController extends SceneController{
 	}
 	tearDownHtml(){
 		for(var i = 0; i < this._elements.length; ++i){
-			this._elements[i].destroy();
+			this._elements[i].remove();
 		}
 	}
 	onClick(x, y){
