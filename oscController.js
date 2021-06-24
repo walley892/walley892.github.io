@@ -65,6 +65,7 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 
 function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
 	var w_radius = radius*canvas.width;
+	alert(canvas.width);
 	var h_radius = radius*canvas.height;
 	var height = 0;
 	if(h_radius > w_radius){
@@ -176,7 +177,7 @@ class OscSceneController extends SceneController{
 		var text = document.createElement("p");
 		text.innerHTML = "sample";
 		document.body.appendChild(text);
-		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, text);	
+		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, text);
 	}
 	onClick(x, y){
 		if(distance(x, y, nodes[nodes.length-1].posX, nodes[nodes.length-1].posY) < nodes[nodes.length-1].radius){
