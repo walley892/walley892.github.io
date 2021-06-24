@@ -185,6 +185,13 @@ class OscSceneController extends SceneController{
 		document.body.appendChild(this._elements[0]);
 		document.body.appendChild(this._elements[1]);
 		document.body.appendChild(this._elements[2]);
+		this._elements[0].addEventListener('click', function(){
+			this.canvasController.switchSceneString("eye");
+		});
+		this._elements[2].addEventListener('click', function(){
+			this.canvasController.switchSceneString("domain");
+		});
+
 		//document.body.appendChild(this._elements[3]);
 		this.placeHtml();
 	}
@@ -198,9 +205,11 @@ class OscSceneController extends SceneController{
 
 	}
 	onClick(x, y){
+		/*
 		if(distance(x, y, nodes[nodes.length-1].posX, nodes[nodes.length-1].posY) < nodes[nodes.length-1].radius){
 			this.canvasController.switchSceneString("domain");
 		}
+		*/
 	}
 	initScene(){
 		var nodes_per_ring = [10, 8];
