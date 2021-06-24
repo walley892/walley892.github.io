@@ -201,8 +201,10 @@ class OscSceneController extends SceneController{
 		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[2]);
 		//sizeAndPlaceElementInCircle(nodes[22].posX, nodes[22].posY, nodes[22].radius, this.canvas, this._elements[3]);
 	}
-	destroyHtml(){
-
+	tearDownHtml(){
+		for(var i = 0; i < this._elements.length; ++i){
+			_elements[i].destroy();
+		}
 	}
 	onClick(x, y){
 		/*
