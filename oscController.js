@@ -184,8 +184,8 @@ class OscSceneController extends SceneController{
 	}
 	placeHtml(){
 		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[0]);
-		sizeAndPlaceElementInCircle(nodes[22].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[1]);
-		sizeAndPlaceElementInCircle(nodes[19].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[2]);
+		sizeAndPlaceElementInCircle(nodes[22].posX, nodes[22].posY, nodes[22].radius, this.canvas, this._elements[1]);
+		sizeAndPlaceElementInCircle(nodes[19].posX, nodes[19].posY, nodes[19].radius, this.canvas, this._elements[2]);
 	}
 	destroyHtml(){
 
