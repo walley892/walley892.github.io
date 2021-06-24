@@ -8,6 +8,13 @@ class EyeSceneController extends SceneController{
 		this.T = 0;
 
 	}
+	createHtml(){
+		var img = document.createElement("img");
+		img.src = "./earth.jpg";
+	}
+	placeHtml(){
+
+	}
 	initScene(){
 	}
 	fragFile(){
