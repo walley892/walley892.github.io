@@ -4,7 +4,7 @@ import {DomainSceneController} from "./domainController.js";
 import {EyeSceneController} from "./eyeController.js";
 
 class SiteController{
-	constructor(){
+	init(){
 		this.canvas = document.getElementById("mainCanvas");
 		var body = document.getElementById("main_body");
 		this.canvas.height = body.clientHeight; 
@@ -71,11 +71,10 @@ class SiteController{
 		this.switchScene(cls);
 	}
 }
-
-window.onload = function(){
-
 var siteController = new SiteController();
-
+window.onload = function(){
+siteController.init();
 siteController.setScene(OscSceneController);
 siteController.startActiveScene();
 };
+export {siteController};
