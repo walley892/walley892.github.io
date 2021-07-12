@@ -12,6 +12,8 @@ class SiteController{
 		this.overlay = document.getElementById("overlay");
 		this.canvas.height = body.clientHeight; 
 		this.canvas.width = body.clientWidth;
+		this.glslCanvas.height = this.canvas.height;
+		this.glslCanvas.width = this.canvas.width;
 		this.activeScene = null;
 		window.onresize = function(){
 			this.activeScene.placeHtml();
