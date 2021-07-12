@@ -6,12 +6,12 @@ import {EyeSceneController} from "./eyeController.js";
 class SiteController{
 	constructor(){
 		this.canvas = document.getElementById("mainCanvas");
+		this.canvas.height = body.clientHeight; 
+		this.canvas.width = body.clientWidth;
 		this.glslCanvas = new GlslCanvas(this.canvas);
 		var body = document.getElementById("main_body");
 		this._clickListener = null;
 		this.overlay = document.getElementById("overlay");
-		this.canvas.height = body.clientHeight; 
-		this.canvas.width = body.clientWidth;
 		this.glslCanvas.height = this.canvas.height;
 		this.glslCanvas.width = this.canvas.width;
 		this.activeScene = null;
