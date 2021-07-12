@@ -15,7 +15,7 @@ class EyeSceneController extends SceneController{
 		this.canvas = canvas;
 		this.glslCanvas = glslCanvas;
 		this.mouse = {x:10, y:10};
-		document.addEventListener('mouseMove', function(e) {
+		document.addEventListener('mousemove', function(e) {
 			this.mouse = getMousePos(this.canvas, e);
 		}.bind(this));
 		this.T = 0;
