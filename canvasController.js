@@ -16,6 +16,7 @@ class SiteController{
 		window.onresize = function(){
 			this.activeScene.placeHtml();
 		}.bind(this);
+		this.glslCanvas.resize();
 	}
 	setScene(sceneControllerCls){
 		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas, this);
