@@ -23,6 +23,7 @@ class EyeSceneController extends SceneController{
 	}
 	drawScene(){
 		this.glslCanvas.setUniform("u_t", this.T/80);
+		this.glslCanvas.setUniform("mouse_pos", 0, 0);
 	}
 	update(){
 		this.T = this.T + 1;

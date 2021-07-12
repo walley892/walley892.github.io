@@ -2,6 +2,7 @@ precision mediump float;
 uniform vec2 u_resolution;
 uniform float u_t;
 uniform vec2 u_mouse;
+uniform vec2 mouse_pos;
 
 float dist(vec2 p1, vec2 p2){
     float d1 = p1.x-p2.x;
@@ -56,7 +57,7 @@ void main(){
 
 	float c_x = my_x / (float(n_x)) + (1.0/(2.0*float(n_x)));
 	float c_y = my_y / (float(n_y)) + (1.0/(2.0*float(n_y)));
-	vec3 normalized_mouse_pos = vec3(1.0*(u_mouse.x/u_resolution.x - c_x), 1.0*(u_mouse.y/u_resolution.y - c_y), 0.5);
+	vec3 normalized_mouse_pos = vec3(1.0*(mouse_pos.x/u_resolution.x - c_x), 1.0*(mouse_pos.y/u_resolution.y - c_y), 0.5);
 	float light_d_2 = dist(normalized_mouse_pos.xy, vec2(0.0, 0.0));
 	vec3 pos_3 = phi(pos_normalized, 0.4) + vec3(0.0, 0.0, -0.5 - exp(0.2/light_d_2));
 	float light_d = dist_3(normalized_mouse_pos, pos_3);
@@ -68,6 +69,6 @@ void main(){
 	}else{
 			gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}	
-	float di = dist_3(vec3(pos_raw, 0.5), vec3(u_mouse.x/u_resolution.x, u_mouse.y/u_resolution.y, 0.5));
+	float di = dist_3(vec3(pos_raw, 0.5), vec3(mouse_pos.x/u_resolution.x, mouse_pos.y/u_resolution.y, 0.5));
 	gl_FragColor.w = 1.3 - exp(0.2/pow(di, 1.1))*0.05;
 }
