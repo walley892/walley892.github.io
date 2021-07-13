@@ -51,6 +51,7 @@ class SiteController{
 		if(this.activeSceneUpdate != null){
 			window.clearInterval(this.activeSceneUpdate);
 			window.clearInterval(this.activeSceneDraw);
+			alert("bye bye")
 		}
 		this.activeSceneUpdate = window.setInterval(
 			this.activeScene.update.bind(this.activeScene),
