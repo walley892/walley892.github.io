@@ -3,10 +3,11 @@ import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
 import {sizeAndPlaceElementInCircle} from "./utils.js";
 
 class DomainSceneController extends SceneController{
-	constructor(canvas, glslCanvas){
+	constructor(canvas, glslCanvas, canvasController){
 		super(canvas, glslCanvas);
 		this.glslCanvas = glslCanvas;
 		this.T = 0;
+		this.canvasController = canvasController;
 		this._elements = [];
 	}
 	createHtml(){
