@@ -27,15 +27,16 @@ class DomainSceneController extends SceneController{
 		for(var i = 0; i < 7; ++i){
 			document.body.appendChild(this._elements[i]);
 		}
+		this.placeHtml();
 	}
 	placeHtml(){
-		sizeAndPlaceElementInCircle(0.5, 1.0/7.0, 0.3, this.canvas, this._elements[0]);
-		sizeAndPlaceElementInCircle(0.5, 2.0/7.0, 0.3, this.canvas, this._elements[1]);
-		sizeAndPlaceElementInCircle(0.5, 3.0/7.0, 0.3, this.canvas, this._elements[2]);
-		sizeAndPlaceElementInCircle(0.2, 4.0/7.0, 0.3, this.canvas, this._elements[3]);
-		sizeAndPlaceElementInCircle(0.8, 4.0/7.0, 0.3, this.canvas, this._elements[4]);
-		sizeAndPlaceElementInCircle(0.5, 5.0/7.0, 0.3, this.canvas, this._elements[5]);
-		sizeAndPlaceElementInCircle(0.5, 6.0/7.0, 0.3, this.canvas, this._elements[6]);
+		sizeAndPlaceElementInCircle(0.5, 6.0/7.0, 0.8, this.canvas, this._elements[0]);
+		sizeAndPlaceElementInCircle(0.5, 5.0/7.0, 0.7, this.canvas, this._elements[1]);
+		sizeAndPlaceElementInCircle(0.5, 4.0/7.0, 0.6, this.canvas, this._elements[2]);
+		sizeAndPlaceElementInCircle(0.2, 3.0/7.0, 0.1, this.canvas, this._elements[3]);
+		sizeAndPlaceElementInCircle(0.8, 3.0/7.0, 0.1, this.canvas, this._elements[4]);
+		sizeAndPlaceElementInCircle(0.5, 2.0/7.0, 0.1, this.canvas, this._elements[5]);
+		sizeAndPlaceElementInCircle(0.5, 1.0/7.0, 0.1, this.canvas, this._elements[6]);
 	}
 	tearDownHtml(){
 		for(var i = 0; i < 7; ++i){
