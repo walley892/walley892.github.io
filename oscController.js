@@ -200,11 +200,12 @@ class OscSceneController extends SceneController{
 		*/
 	}
 	initScene(){
-		nodes.length = 0;
-		var nodes_per_ring = [10, 8];
-		var ring_sizes = [(baseScreenWidth/16) / baseScreenWidth, (baseScreenWidth/6) / baseScreenWidth];
-		placeNodes(nodes_per_ring, ring_sizes, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
-		placeNNodesInRing(4, (baseScreenWidth/3)/baseScreenWidth, 200/baseScreenWidth, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
+		if(nodes.length == 0){
+			var nodes_per_ring = [10, 8];
+			var ring_sizes = [(baseScreenWidth/16) / baseScreenWidth, (baseScreenWidth/6) / baseScreenWidth];
+			placeNodes(nodes_per_ring, ring_sizes, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
+			placeNNodesInRing(4, (baseScreenWidth/3)/baseScreenWidth, 200/baseScreenWidth, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
+		}
 	}
 	fragFile(){
 		return "oscFrag.frag";
