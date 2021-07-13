@@ -33,7 +33,8 @@ class SiteController{
 	}
 	setScene(sceneControllerCls){
 		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas, this);
-		if(this._clickLisetner != null){
+		alert("inst");
+		if(this._clickListener != null){
 			this.canvas.removeEventListener('click', this._clickListener);
 		}
 		this._clickListener = function(event){
@@ -42,8 +43,10 @@ class SiteController{
 				event.clientY/this.canvas.height,
 			);
 		}.bind(this);
+		alert("clicks");
 		this.canvas.addEventListener("click", this._clickListener);
 		loadText(this.activeScene.fragFile()).then((frag) => this.glslCanvas.load(frag));
+		alert("loaded");
 	}
 	startActiveScene(){
 		this.activeScene.initScene();
