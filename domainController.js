@@ -26,6 +26,8 @@ class DomainSceneController extends SceneController{
 		this._elements[6].innerHTML = "evanwall@buffalo.edu";
 		for(var i = 0; i < 7; ++i){
 			document.body.appendChild(this._elements[i]);
+			this._elements[i].style.color = "rgba(255, 0, 0, 1)";
+			this._elements[i].style.zIndex = "1";
 		}
 		this.placeHtml();
 	}
