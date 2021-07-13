@@ -15,16 +15,14 @@ class DomainSceneController extends SceneController{
 		this._elements.push(document.createElement("p"));
 		this._elements[1].innerHTML = "Math nerd | code artist | computer graphics enthusiast | full stack developer | VR developer";
 		this._elements.push(document.createElement("p"));
-		this._elements[2].innerHTML = "programming languages are just tools (but typed Python is my favorite :) )";
+		this._elements[2].innerHTML = "projects";
 		this._elements.push(document.createElement("p"));
-		this._elements[3].innerHTML = "projects";
+		this._elements[3].innerHTML = "home";
 		this._elements.push(document.createElement("p"));
-		this._elements[4].innerHTML = "home";
+		this._elements[4].innerHTML = "main contact:";
 		this._elements.push(document.createElement("p"));
-		this._elements[5].innerHTML = "main contact:";
-		this._elements.push(document.createElement("p"));
-		this._elements[6].innerHTML = "evanwall@buffalo.edu";
-		for(var i = 0; i < 7; ++i){
+		this._elements[5].innerHTML = "evanwall@buffalo.edu";
+		for(var i = 0; i < 6; ++i){
 			document.body.appendChild(this._elements[i]);
 			this._elements[i].style.color = "rgba(255, 0, 0, 1)";
 			this._elements[i].style.zIndex = "1";
@@ -32,16 +30,15 @@ class DomainSceneController extends SceneController{
 		this.placeHtml();
 	}
 	placeHtml(){
-		sizeAndPlaceElementInCircle(0.5, 6.0/7.0, 0.8, this.canvas, this._elements[0]);
-		sizeAndPlaceElementInCircle(0.5, 5.0/7.0, 0.7, this.canvas, this._elements[1]);
-		sizeAndPlaceElementInCircle(0.5, 4.0/7.0, 0.6, this.canvas, this._elements[2]);
-		sizeAndPlaceElementInCircle(0.2, 3.0/7.0, 0.1, this.canvas, this._elements[3]);
-		sizeAndPlaceElementInCircle(0.8, 3.0/7.0, 0.1, this.canvas, this._elements[4]);
-		sizeAndPlaceElementInCircle(0.5, 2.0/7.0, 0.1, this.canvas, this._elements[5]);
-		sizeAndPlaceElementInCircle(0.5, 1.0/7.0, 0.1, this.canvas, this._elements[6]);
+		sizeAndPlaceElementInCircle(0.5, 5.0/6.0, 0.8, this.canvas, this._elements[0]);
+		sizeAndPlaceElementInCircle(0.5, 4.0/6.0, 0.6, this.canvas, this._elements[1]);
+		sizeAndPlaceElementInCircle(0.2, 3.0/6.0, 0.1, this.canvas, this._elements[3]);
+		sizeAndPlaceElementInCircle(0.8, 2.0/6.0, 0.1, this.canvas, this._elements[4]);
+		sizeAndPlaceElementInCircle(0.5, 2.0/6.0, 0.1, this.canvas, this._elements[5]);
+		sizeAndPlaceElementInCircle(0.5, 1.5/6.0, 0.1, this.canvas, this._elements[6]);
 	}
 	tearDownHtml(){
-		for(var i = 0; i < 7; ++i){
+		for(var i = 0; i < 6; ++i){
 			this._elements[i].remove();
 		}
 	}
