@@ -21,9 +21,15 @@ class SiteController{
 		this.mouse = {x:0, y:0};
 		document.addEventListener('mousemove', function(e) {
 			this.mouse = getMousePos(this.canvas, e);
-			this.glslCanvas.setUniform("mouse_pos", this.mouse.x, this.mouse.y);
 		}.bind(this));
+		window.setInterval(
+			this.setDefaultUniforms,
+			20
+		)
 		this.glslCanvas.resize();
+	}
+	setDefaultUniforms(){
+		this.glslCanvas.setUniform("mouse_pos", this.mouse.x, this.mouse.y);
 	}
 	setScene(sceneControllerCls){
 		this.activeScene = new sceneControllerCls(this.canvas, this.glslCanvas, this);
