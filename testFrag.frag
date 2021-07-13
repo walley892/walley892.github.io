@@ -78,5 +78,5 @@ void main(){
 	gl_FragColor = color_rgba;	
 	vec2 pos_raw = gl_FragCoord.xy/u_resolution.xy;
 	float di = dist(pos_raw, vec2(mouse_pos.x/u_resolution.x, mouse_pos.y/u_resolution.y)*0.8 );
-	gl_FragColor.w = 1.3 - exp(0.2/pow(di, 1.1))*0.05;
+	gl_FragColor.w = max(1.3 - exp(0.2/pow(di, 1.1))*0.05, 0.01);
 }
