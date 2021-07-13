@@ -23,7 +23,7 @@ class SiteController{
 			this.mouse = getMousePos(this.canvas, e);
 		}.bind(this));
 		window.setInterval(
-			this.setDefaultUniforms,
+			this.setDefaultUniforms.bind(this),
 			20
 		)
 		this.glslCanvas.resize();
