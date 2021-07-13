@@ -27,6 +27,13 @@ class DomainSceneController extends SceneController{
 			this._elements[i].style.color = "rgba(255, 0, 0, 1)";
 			this._elements[i].style.zIndex = "1";
 		}
+		this._elements[3].addEventListener('click', function(){
+                        this.canvasController.switchSceneString("osc");
+                }.bind(this));
+		this._elements[4].addEventListener('click', function(){
+                        this.canvasController.switchSceneString("eye");
+                }.bind(this));
+
 		this.placeHtml();
 	}
 	placeHtml(){
