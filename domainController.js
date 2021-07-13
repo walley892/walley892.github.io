@@ -50,8 +50,6 @@ class DomainSceneController extends SceneController{
 			this._elements[i].remove();
 		}
 	}
-
-
 	initScene(){
 	}
 	fragFile(){

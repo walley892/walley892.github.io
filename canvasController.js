@@ -66,9 +66,9 @@ class SiteController{
 	switchScene(newSceneCls){
 		this.fadeOut();
 		window.setTimeout(this.activeScene.tearDownHtml.bind(this.activeScene), 2000, newSceneCls);
-		window.setTimeout(this.setScene.bind(this), 2050, newSceneCls);
-		window.setTimeout(this.startActiveScene.bind(this), 2100);
-		window.setTimeout(this.fadeIn.bind(this), 2150);
+		window.setTimeout(this.setScene.bind(this), 2100, newSceneCls);
+		window.setTimeout(this.startActiveScene.bind(this), 2150);
+		window.setTimeout(this.fadeIn.bind(this), 2200);
 	}
 	switchSceneString(sceneString){
 		var cls = null;
