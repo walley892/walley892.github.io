@@ -1,5 +1,6 @@
 import {SceneController} from "./base_scene_controller.js";
 import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
+import {sizeAndPlaceElementInCircle} from "./utils.js";
 
 class Node{
 	constructor(posX, posY, radius, state=0){
@@ -30,7 +31,7 @@ function placeNNodesInRing(nNodes, bigRadius, littleRadius, centerX, centerY){
 	var prevLength = nodes.length;
 	for(var i = 0; i < nNodes; ++i){
 		var angle = deltaAngle*i;
-		var state = angle/(2*Math.PI) + ((Math.random()/3) - (2.0/3.0)); 
+		var state = angle/(2*Math.PI); 
 		var pos = polarToCartesian(bigRadius, angle);
 		var newNode = new Node(centerX + pos[0], centerY + pos[1], littleRadius, state);
 		nodes.push(newNode);
@@ -60,22 +61,6 @@ function placeNodes(n_nodes, radii, centerX, centerY){
 		var littleRadius = bigRadius*Math.sin(Math.PI/nodes_in_ring);
 		placeNNodesInRing(nodes_in_ring, bigRadius, littleRadius, centerX, centerY);
 	}
-}
-
-
-function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
-	var w_radius = radius*canvas.width;
-	var h_radius = radius*canvas.height;
-	var height = 0;
-	var target_width = w_radius*1.5;
-	height = (target_width)/(element.innerHTML.length*0.6);
-	element.style.position = "absolute";
-	element.style.padding = "0";
-	element.style.margin = "0";
-	element.style.fontSize = String(height) + "px";
-	element.style.height = String(height * 1.25) + "px";
-	element.style.left = String(centerX * canvas.clientWidth - element.clientWidth/2) + "px";
-	element.style.bottom = String(centerY * canvas.clientHeight - element.clientHeight/2) + "px";
 }
 
 function getNodes(){
@@ -177,7 +162,6 @@ class OscSceneController extends SceneController{
 		this._elements[0].innerHTML = "projects";
 		this._elements[1].innerHTML = "I'm evan :)";
 		this._elements[2].innerHTML = "about";
-		//this._elements[3].innerHTML = "I'm evan :)";
 		for(var i = 0; i < this._elements.length; ++i){
 			this._elements[i].style.color = "black";
 		}
@@ -192,14 +176,12 @@ class OscSceneController extends SceneController{
 			this.canvasController.switchSceneString("domain");
 		}.bind(this));
 
-		//document.body.appendChild(this._elements[3]);
 		this.placeHtml();
 	}
 	placeHtml(){
 		sizeAndPlaceElementInCircle(nodes[19].posX, nodes[19].posY, nodes[19].radius, this.canvas, this._elements[0]);
 		sizeAndPlaceElementInCircle(nodes[20].posX, nodes[20].posY, nodes[20].radius, this.canvas, this._elements[1]);
 		sizeAndPlaceElementInCircle(nodes[21].posX, nodes[21].posY, nodes[21].radius, this.canvas, this._elements[2]);
-		//sizeAndPlaceElementInCircle(nodes[22].posX, nodes[22].posY, nodes[22].radius, this.canvas, this._elements[3]);
 	}
 	tearDownHtml(){
 		for(var i = 0; i < this._elements.length; ++i){
