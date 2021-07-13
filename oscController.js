@@ -200,6 +200,7 @@ class OscSceneController extends SceneController{
 		*/
 	}
 	initScene(){
+		nodes = []
 		var nodes_per_ring = [10, 8];
 		var ring_sizes = [(baseScreenWidth/16) / baseScreenWidth, (baseScreenWidth/6) / baseScreenWidth];
 		placeNodes(nodes_per_ring, ring_sizes, (baseScreenWidth/2)/baseScreenWidth, (baseScreenHeight/2)/baseScreenHeight);
