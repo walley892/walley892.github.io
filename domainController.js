@@ -34,8 +34,8 @@ class DomainSceneController extends SceneController{
 		sizeAndPlaceElementInCircle(0.5, 4.0/6.0, 0.6, this.canvas, this._elements[1]);
 		sizeAndPlaceElementInCircle(0.3, 2.5/6.0, 0.1, this.canvas, this._elements[2]);
 		sizeAndPlaceElementInCircle(0.7, 2.5/6.0, 0.07, this.canvas, this._elements[3]);
-		sizeAndPlaceElementInCircle(0.5, 2.0/6.0, 0.1, this.canvas, this._elements[4]);
-		sizeAndPlaceElementInCircle(0.5, 1.5/6.0, 0.1, this.canvas, this._elements[5]);
+		sizeAndPlaceElementInCircle(0.5, 1.5/6.0, 0.1, this.canvas, this._elements[4]);
+		sizeAndPlaceElementInCircle(0.5, 1.0/6.0, 0.1, this.canvas, this._elements[5]);
 	}
 	tearDownHtml(){
 		for(var i = 0; i < 6; ++i){
