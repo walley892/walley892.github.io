@@ -1,4 +1,4 @@
-import {loadText} from "./utils.js";
+import {loadText, getMousePos} from "./utils.js";
 import {OscSceneController} from "./oscController.js";
 import {DomainSceneController} from "./domainController.js";
 import {EyeSceneController} from "./eyeController.js";
@@ -18,6 +18,11 @@ class SiteController{
 		window.onresize = function(){
 			this.activeScene.placeHtml();
 		}.bind(this);
+		this.mouse = {x:0, y:0};
+		document.addEventListener('mousemove', function(e) {
+			this.mouse = getMousePos(this.canvas, e);
+			this.glslCanvas.setUniform("mouse_pos", this.mouse.x, this.mouse.y);
+		}.bind(this));
 		this.glslCanvas.resize();
 	}
 	setScene(sceneControllerCls){
