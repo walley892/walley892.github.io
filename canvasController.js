@@ -90,7 +90,7 @@ class SiteController{
 var siteController = new SiteController();
 window.onload = function(){
 siteController.init();
-siteController.setScene(DomainSceneController);
+siteController.setScene(OscSceneController);
 siteController.startActiveScene();
 };
 export {siteController};
