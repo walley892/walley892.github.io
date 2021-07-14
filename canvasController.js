@@ -48,7 +48,6 @@ class SiteController{
 	startActiveScene(){
 		this.activeScene.initScene();
 		this.activeScene.createHtml();
-		/*
 		if(this.activeSceneUpdate != null){
 			window.clearInterval(this.activeSceneUpdate);
 			window.clearInterval(this.activeSceneDraw);
@@ -61,7 +60,6 @@ class SiteController{
 			this.activeScene.drawScene.bind(this.activeScene),
 			20
 		);
-		*/
 	}
 	fadeOut(){
 		this.overlay.style.backgroundColor = "rgba(1, 1, 1, 1)";

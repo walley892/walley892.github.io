@@ -191,6 +191,7 @@ class OscSceneController extends SceneController{
 		for(var i = 0; i < this._elements.length; ++i){
 			this._elements[i].remove();
 		}
+		this.glslCanvas.uniforms = {};
 	}
 	onClick(x, y){
 		/*
