@@ -22,7 +22,7 @@ function sizeAndPlaceElementInCircle(centerX, centerY, radius, canvas, element){
 	element.style.fontSize = String(height) + "px";
 	element.style.height = String(height * 1.25) + "px";
 	element.style.left = String(centerX * canvas.clientWidth - element.clientWidth/2) + "px";
-	element.style.bottom = String(centerY * canvas.clientHeight - element.clientHeight/2) + "px";
+	element.style.bottom = String(centerY * canvas.clientHeight - height/2) + "px";
 }
 
 export {loadText, getMousePos, sizeAndPlaceElementInCircle};
