@@ -3,8 +3,8 @@ import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
 import {sizeAndPlaceElementInCircle} from "./utils.js";
 
 class EyeSceneController extends SceneController{
-	constructor(canvas, glslCanvas){
-		super(canvas, glslCanvas, siteController);
+	constructor(canvas, glslCanvas, siteController){
+		super(canvas, glslCanvas);
 		this.canvas = canvas;
 		this.glslCanvas = glslCanvas;
 		this.siteController = siteController;
