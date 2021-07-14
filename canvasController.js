@@ -54,11 +54,11 @@ class SiteController{
 		}
 		this.activeSceneUpdate = window.setInterval(
 			this.activeScene.update.bind(this.activeScene),
-			5000
+			20
 		);
 		this.activeSceneDraw = window.setInterval(
 			this.activeScene.drawScene.bind(this.activeScene),
-			5000
+			20
 		);
 	}
 	fadeOut(){
