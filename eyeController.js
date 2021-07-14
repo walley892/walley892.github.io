@@ -17,7 +17,7 @@ class EyeSceneController extends SceneController{
 					var text = document.createElement("p");
 					text.innerHTML = "home";
 					this._elements.push(text);
-					var text = document.createElement("p");
+					text = document.createElement("p");
 					text.innerHTML = "projects";
 					this._elements.push(text);
 				}else{
@@ -36,7 +36,7 @@ class EyeSceneController extends SceneController{
 		for(var j = 0; j < 3; ++j){
 			for(var i = 0; i < 2; ++i){
 				if(i == 1 && j == 2){
-
+					
 				}else{
 					var img = this._elements[j*2 + i];
 					img.style.width = elementWidth + "px";
