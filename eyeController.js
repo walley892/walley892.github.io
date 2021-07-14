@@ -20,8 +20,8 @@ class EyeSceneController extends SceneController{
 				img.style.width = elementWidth + "px";
 				img.style.height = elementHeight + "px";
 				img.style.position = "absolute";
-				img.style.top = (i+1)*elementHeight/3 - elementHeight/2;
-				img.style.left = (j+i)*elementWidth/4 - elementWidth/2;
+				img.style.top = ((i+1)*elementHeight/3 - elementHeight/2) + "px";
+				img.style.left = ((j+i)*elementWidth/4 - elementWidth/2) + "px";
 				document.body.appendChild(img);
 				this._elements.push(img);
 			}
