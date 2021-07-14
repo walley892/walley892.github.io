@@ -1,6 +1,6 @@
 import {SceneController} from "./base_scene_controller.js";
 import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
-
+import {sizeAndPlaceElementInCircle} from "./utils.js";
 
 class EyeSceneController extends SceneController{
 	constructor(canvas, glslCanvas){
@@ -16,9 +16,11 @@ class EyeSceneController extends SceneController{
 				if(i == 1 && j == 2){
 					var text = document.createElement("p");
 					text.innerHTML = "home";
+					document.body.appendChild(text);
 					this._elements.push(text);
 					text = document.createElement("p");
 					text.innerHTML = "projects";
+					document.body.appendChild(text);
 					this._elements.push(text);
 				}else{
 					var img = document.createElement("img");
@@ -36,7 +38,12 @@ class EyeSceneController extends SceneController{
 		for(var j = 0; j < 3; ++j){
 			for(var i = 0; i < 2; ++i){
 				if(i == 1 && j == 2){
-					
+					var topText = this._elements[j*2 + i];
+					var x = (i+1)*this.canvas.height/3.0;
+					var y = (j+1)*this.canvas.width/4.0;
+					sizeAndPlaceElementInCircle(x, y + 0.1, 0.1, topText, this.canvas);
+					var bottomText = this._elements[j*2 + i + 1];
+					sizeAndPlaceElementInCircle(x, y - 0.1, 0.1, bottomText, this.canvas);
 				}else{
 					var img = this._elements[j*2 + i];
 					img.style.width = elementWidth + "px";
