@@ -2,6 +2,8 @@ import {SceneController} from "./base_scene_controller.js";
 import {baseScreenWidth, baseScreenHeight} from "./magicNumbers.js";
 import {sizeAndPlaceElementInCircle} from "./utils.js";
 
+var _T = 0;
+
 class DomainSceneController extends SceneController{
 	constructor(canvas, glslCanvas, canvasController){
 		super(canvas, glslCanvas);
@@ -56,10 +58,10 @@ class DomainSceneController extends SceneController{
 		return "testFrag.frag";
 	}
 	drawScene(){
-		this.glslCanvas.setUniform("u_t", this.T/180);
+		this.glslCanvas.setUniform("u_t", _T/180);
 	}
 	update(){
-		this.T = this.T + 1;
+		_T = _T + 1;
 	}
 }
 
