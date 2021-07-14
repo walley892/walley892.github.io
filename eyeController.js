@@ -24,10 +24,10 @@ class EyeSceneController extends SceneController{
 					document.body.appendChild(text);
 					this._elements.push(text);
 					text = document.createElement("p");
-					text.innerHTML = "projects";
+					text.innerHTML = "about";
 					text.style.color = "blue";
 					text.addEventListener('click', function(){
-						this.siteController.switchSceneString("eye");
+						this.siteController.switchSceneString("domain");
 					}.bind(this));
 					document.body.appendChild(text);
 					this._elements.push(text);
@@ -52,7 +52,7 @@ class EyeSceneController extends SceneController{
 					var x = (j+1)/4.0;
 					sizeAndPlaceElementInCircle(x, y + 0.06, 0.05, this.canvas, topText);
 					var bottomText = this._elements[j*2 + i + 1];
-					sizeAndPlaceElementInCircle(x, y - 0.06, 0.08, this.canvas, bottomText);
+					sizeAndPlaceElementInCircle(x, y - 0.06, 0.07, this.canvas, bottomText);
 				}else{
 					var img = this._elements[j*2 + i];
 					img.style.width = elementWidth + "px";
