@@ -11,24 +11,29 @@ class EyeSceneController extends SceneController{
 		this._elements = [];
 	}
 	createHtml(){
-		var elementWidth = this.canvas.width/5.0;
-		var elementHeight = this.canvas.height/4.0;
 		for(var j = 0; j < 3; ++j){
 			for(var i = 0; i < 2; ++i){
 				var img = document.createElement("img");
 				img.src = "./earth.jpg";
+				document.body.appendChild(img);
+				this._elements.push(img);
+			}
+		}
+		this.placeHtml();
+	}
+	placeHtml(){
+		var elementWidth = this.canvas.width/5.0;
+		var elementHeight = this.canvas.height/4.0;
+		for(var j = 0; j < 3; ++j){
+			for(var i = 0; i < 2; ++i){
+				var img = this._elements[j*2 + i];
 				img.style.width = elementWidth + "px";
 				img.style.height = elementHeight + "px";
 				img.style.position = "absolute";
 				img.style.top = ((i+1)*this.canvas.height/3.0 - elementHeight/2.0) + "px";
 				img.style.left = ((j+1)*this.canvas.width/4.0 - elementWidth/2.0) + "px";
-				document.body.appendChild(img);
-				this._elements.push(img);
 			}
 		}
-	}
-	placeHtml(){
-
 	}
 	initScene(){
 	}
