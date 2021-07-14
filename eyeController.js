@@ -19,7 +19,7 @@ class EyeSceneController extends SceneController{
 					text.innerHTML = "home";
 					text.style.color = "blue";
 					text.addEventListener('click', function(){
-						this.canvasController.switchSceneString("osc");
+						this.siteController.switchSceneString("osc");
 					}.bind(this));
 					document.body.appendChild(text);
 					this._elements.push(text);
@@ -27,7 +27,7 @@ class EyeSceneController extends SceneController{
 					text.innerHTML = "projects";
 					text.style.color = "blue";
 					text.addEventListener('click', function(){
-						this.canvasController.switchSceneString("eye");
+						this.siteController.switchSceneString("eye");
 					}.bind(this));
 					document.body.appendChild(text);
 					this._elements.push(text);
