@@ -4,9 +4,10 @@ import {sizeAndPlaceElementInCircle} from "./utils.js";
 
 class EyeSceneController extends SceneController{
 	constructor(canvas, glslCanvas){
-		super(canvas, glslCanvas);
+		super(canvas, glslCanvas, siteController);
 		this.canvas = canvas;
 		this.glslCanvas = glslCanvas;
+		this.siteController = siteController;
 		this.T = 0;
 		this._elements = [];
 	}
@@ -17,11 +18,17 @@ class EyeSceneController extends SceneController{
 					var text = document.createElement("p");
 					text.innerHTML = "home";
 					text.style.color = "blue";
+					text.addEventListener('click', function(){
+						this.canvasController.switchSceneString("osc");
+					}.bind(this));
 					document.body.appendChild(text);
 					this._elements.push(text);
 					text = document.createElement("p");
 					text.innerHTML = "projects";
 					text.style.color = "blue";
+					text.addEventListener('click', function(){
+						this.canvasController.switchSceneString("eye");
+					}.bind(this));
 					document.body.appendChild(text);
 					this._elements.push(text);
 				}else{
@@ -55,6 +62,11 @@ class EyeSceneController extends SceneController{
 					img.style.left = ((j+1)*this.canvas.width/4.0 - elementWidth/2.0) + "px";
 				}
 			}
+		}
+	}
+	tearDownHtml(){
+		for(var i = 0; i < this._elements.length; ++i){
+			this._elements[i].remove();
 		}
 	}
 	initScene(){
