@@ -48,10 +48,6 @@ class SiteController{
 	startActiveScene(){
 		this.activeScene.initScene();
 		this.activeScene.createHtml();
-		if(this.activeSceneUpdate != null){
-			window.clearInterval(this.activeSceneUpdate);
-			window.clearInterval(this.activeSceneDraw);
-		}
 		this.activeSceneUpdate = window.setInterval(
 			this.activeScene.update.bind(this.activeScene),
 			20
@@ -67,9 +63,15 @@ class SiteController{
 	fadeIn(){
 		this.overlay.style.backgroundColor = "rgba(1, 1, 1, 0)";
 	}
+	stopActiveScene(){
+		window.clearInterval(this.activeSceneDraw);
+		window.clearInterval(this.activeSceneUpdate);
+		this.activeScene.tearDownHtml();
+		this.glslCanvas.uniforms = {};
+	}
 	switchScene(newSceneCls){
 		this.fadeOut();
-		window.setTimeout(this.activeScene.tearDownHtml.bind(this.activeScene), 2000, newSceneCls);
+		window.setTimeout(this.stopActiveScene.bind(this), 2000, newSceneCls);
 		window.setTimeout(this.setScene.bind(this), 2100, newSceneCls);
 		window.setTimeout(this.startActiveScene.bind(this), 2150);
 		window.setTimeout(this.fadeIn.bind(this), 2200);
