@@ -214,6 +214,7 @@ class OscSceneController extends SceneController{
 		this.glslCanvas.setUniform("u_position", ...(nodes.map((node) => [node.posX, node.posY])));
 		this.glslCanvas.setUniform("u_radius", ...(nodes.map((node) => node.radius)));
 		this.glslCanvas.setUniform("u_state", ...(nodes.map((node) => node.state)));
+		alert("osc drawing");
 	}
 	update(){
 		updateNodes();
