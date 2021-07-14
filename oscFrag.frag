@@ -16,7 +16,7 @@ uniform float u_radius[23];
 void main(){
 	vec4 c = vec4(0.0, 0.0, 0.0 ,0.0);
 	for(int i = 0; i < 23; ++i){
-		float state = 1.0;
+		float state = u_state[i];
 		vec2 position = u_position[i];
 		float radius = u_radius[i];
 		float d = dist(position, gl_FragCoord.xy/u_resolution.xy);
