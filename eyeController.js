@@ -12,6 +12,7 @@ class EyeSceneController extends SceneController{
 		this._elements = [];
 	}
 	createHtml(){
+		img_srcs = ['./cubes.gif', './earth.jpg', './mer.jpg', './ven.jpg', './mars.jpg']
 		for(var j = 0; j < 3; ++j){
 			for(var i = 0; i < 2; ++i){
 				if(i == 1 && j == 2){
@@ -33,7 +34,7 @@ class EyeSceneController extends SceneController{
 					this._elements.push(text);
 				}else{
 					var img = document.createElement("img");
-					img.src = "./earth.jpg";
+					img.src = img_srcs[j*2 + i];
 					document.body.appendChild(img);
 					this._elements.push(img);
 				}
