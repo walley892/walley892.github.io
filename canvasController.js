@@ -29,6 +29,7 @@ class SiteController{
 		this.glslCanvas.resize();
 	}
 	setDefaultUniforms(){
+		this.glslCanvas.uniforms["mouse_pos"] = {};
 		this.glslCanvas.setUniform("mouse_pos", this.mouse.x, this.mouse.y);
 	}
 	setScene(sceneControllerCls){
