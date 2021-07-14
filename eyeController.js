@@ -41,9 +41,9 @@ class EyeSceneController extends SceneController{
 					var topText = this._elements[j*2 + i];
 					var x = (i+1)*this.canvas.height/3.0;
 					var y = (j+1)*this.canvas.width/4.0;
-					sizeAndPlaceElementInCircle(x, y + 0.1, 0.1, topText, this.canvas);
+					sizeAndPlaceElementInCircle(x, y + 0.1, 0.1, this.canvas, topText);
 					var bottomText = this._elements[j*2 + i + 1];
-					sizeAndPlaceElementInCircle(x, y - 0.1, 0.1, bottomText, this.canvas);
+					sizeAndPlaceElementInCircle(x, y - 0.1, 0.1, this.canvas, bottomText);
 				}else{
 					var img = this._elements[j*2 + i];
 					img.style.width = elementWidth + "px";
