@@ -63,7 +63,7 @@ void main(){
 	vec3 pos_3 = phi(pos_normalized, 0.4) + vec3(0.0, 0.0, -0.5 - exp(0.2/light_d_2));
 	float light_d = dist_3(normalized_mouse_pos, pos_3);
 	float d = dist(vec2(0.0, 0.0), pos_normalized);
-	float radius = 0.4 - exp(0.2/pow(light_d_2, 1.3))*0.05;
+	float radius = 0.4 - exp(0.2/pow(light_d_2, 1.05))*0.05;
 	if(d < radius){
 		float c = dot(cross(normalized(phi_u(pos_normalized, radius)), normalized(phi_v(pos_normalized, radius))), normalized(normalized_mouse_pos -pos_3));
 		float d_2 = 10.0;
@@ -73,7 +73,7 @@ void main(){
 				d_2 = min(d_2, d_3);
 			}
 		}
-    		gl_FragColor= (8.0/(1.0+light_d*light_d*2.0))*vec4(1.0/(150.0*d_2*d_2),  (0.3/acos(c))*0.6, 0.6, 1.0);
+    		gl_FragColor= (8.0/(1.0+light_d*light_d*2.0))*vec4(1.0/(200.0*d_2*d_2),  (0.3/acos(c))*0.6, 0.6, 1.0);
 	}else{
 			gl_FragColor = vec4(0.0,0.0,0.0,0.0);
 	}	
