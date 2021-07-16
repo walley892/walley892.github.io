@@ -66,7 +66,7 @@ void main(){
 	float radius = 0.4 - exp(0.2/pow(light_d_2, 1.3))*0.05;
 	if(d < radius){
 		float c = dot(cross(normalized(phi_u(pos_normalized, radius)), normalized(phi_v(pos_normalized, radius))), normalized(normalized_mouse_pos -pos_3));
-		float d_2 = 10;
+		float d_2 = 10.0;
 		for(int i = 0; i < 2; ++i){
 			for(int j = 0; j < 3; ++j){
 				float d_3 = dist(pos_raw, vec2((float(j)+1.0)/4.0, (float(i)+1.0)/3.0));
