@@ -65,7 +65,7 @@ function getNodes(){
 
 function updateState(){
 	for(var i = 0; i < nodes.length; ++i){
-		nodes[i].state = nodes[i].state + 0.01*(2 - (nodes[i].state*0.3));
+		nodes[i].state = nodes[i].state + 0.008*(2 - (nodes[i].state*0.3));
 		nodes[i].prevState = nodes[i].state;
 	}
 }
