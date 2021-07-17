@@ -6,11 +6,7 @@ class Node{
 	constructor(posX, posY, radius, state=0){
             this.posX = posX;
             this.posY = posY;
-	    if(state == 0){
-		this.state = Math.random();
-	    }else{
-		this.state = state;
-	    }
+	    this.state = state;
 	    this.prevState = this.state;
 	    this.radius = radius;
             this.neighbors = [];
@@ -69,7 +65,7 @@ function getNodes(){
 
 function updateState(){
 	for(var i = 0; i < nodes.length; ++i){
-		nodes[i].state = nodes[i].state + 0.005*(2 - (nodes[i].state*0.3));
+		nodes[i].state = nodes[i].state + 0.008*(2 - (nodes[i].state*0.3));
 		nodes[i].prevState = nodes[i].state;
 	}
 }
