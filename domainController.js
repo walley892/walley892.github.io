@@ -33,6 +33,12 @@ class DomainSceneController extends SceneController{
 		this._elements[2].addEventListener('click', function(){
                         this.canvasController.switchSceneString("eye");
                 }.bind(this));
+		this._elements[0].style.cursor = "default";
+		this._elements[1].style.cursor = "default";
+		this._elements[2].style.cursor = "crosshair";
+		this._elements[3].style.cursor = "crosshair";
+		this._elements[4].style.cursor = "default";
+		this._elements[5].style.cursor = "default";
 		this._elements[3].addEventListener('click', function(){
                         this.canvasController.switchSceneString("osc");
                 }.bind(this));

@@ -22,11 +22,13 @@ class EyeSceneController extends SceneController{
 					text.addEventListener('click', function(){
 						this.siteController.switchSceneString("osc");
 					}.bind(this));
+					text.style.cursor = "crosshair";
 					document.body.appendChild(text);
 					this._elements.push(text);
 					text = document.createElement("p");
 					text.innerHTML = "about";
 					text.style.color = "blue";
+					text.style.cursor = "crosshair";
 					text.addEventListener('click', function(){
 						this.siteController.switchSceneString("domain");
 					}.bind(this));

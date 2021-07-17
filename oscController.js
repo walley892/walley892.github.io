@@ -176,6 +176,10 @@ class OscSceneController extends SceneController{
 			this.canvasController.switchSceneString("domain");
 		}.bind(this));
 
+		this._elements[0].style.cursor = "crosshair";
+		this._elements[1].style.cursor = "default";
+		this._elements[2].style.cursor = "crosshair";
+
 		for(var i = 0; i < this._elements.length; ++i){
 			this._elements[i].style.zIndex = "2";
 		}
