@@ -37,13 +37,13 @@ class EyeSceneController extends SceneController{
 					document.body.appendChild(text);
 					this._elements.push(text);
 				}else{
-					var a = document.createElement('a');
-					a.href= links[j*2 + i];
 					var img = document.createElement("img");
+					img.addEventListener('click', function(){
+						window.location.href = links[j*2 + i];
+					});
 					img.src = img_srcs[j*2 + i];
-					a.appendChild(img);
-					document.body.appendChild(a);
-					this._elements.push(a);
+					document.body.appendChild(img);
+					this._elements.push(img);
 				}
 			}
 		}
@@ -68,14 +68,6 @@ class EyeSceneController extends SceneController{
 					img.style.position = "absolute";
 					img.style.top = ((i+1)*this.canvas.height/3.0 - elementHeight/2.0) + "px";
 					img.style.left = ((j+1)*this.canvas.width/4.0 - elementWidth/2.0) + "px";
-					/*
-					img = this._elements[j*2 + i].children[0];
-					img.style.width = elementWidth + "px";
-					img.style.height = elementHeight + "px";
-					img.style.position = "absolute";
-					img.style.top = ((i+1)*this.canvas.height/3.0 - elementHeight/2.0) + "px";
-					img.style.left = ((j+1)*this.canvas.width/4.0 - elementWidth/2.0) + "px";
-					*/
 				}
 			}
 		}
