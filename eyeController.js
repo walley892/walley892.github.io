@@ -37,6 +37,7 @@ class EyeSceneController extends SceneController{
 					document.body.appendChild(text);
 					this._elements.push(text);
 				}else{
+					( function() {
 					var img = document.createElement("img");
 					img.addEventListener('click', function(){
 						window.location.href = this.links[j*2 + i];
@@ -45,6 +46,7 @@ class EyeSceneController extends SceneController{
 					img.style.cursor = "crosshair";
 					document.body.appendChild(img);
 					this._elements.push(img);
+				}.bind(this)());
 				}
 			}
 		}
