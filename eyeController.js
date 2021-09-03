@@ -68,12 +68,14 @@ class EyeSceneController extends SceneController{
 					img.style.position = "absolute";
 					img.style.top = ((i+1)*this.canvas.height/3.0 - elementHeight/2.0) + "px";
 					img.style.left = ((j+1)*this.canvas.width/4.0 - elementWidth/2.0) + "px";
+					/*
 					img = this._elements[j*2 + i].children[0];
 					img.style.width = elementWidth + "px";
 					img.style.height = elementHeight + "px";
 					img.style.position = "absolute";
 					img.style.top = ((i+1)*this.canvas.height/3.0 - elementHeight/2.0) + "px";
 					img.style.left = ((j+1)*this.canvas.width/4.0 - elementWidth/2.0) + "px";
+					*/
 				}
 			}
 		}
