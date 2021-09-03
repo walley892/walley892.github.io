@@ -13,6 +13,8 @@ class EyeSceneController extends SceneController{
 	}
 	createHtml(){
 		var img_srcs = ['./cubes.gif', './osc.gif',  './shapes.gif', './apartment.gif','./mapper.gif']
+		var base = 'http://github.com/walley892/';
+		var links = [base + 'engine', base + 'osc', base + 'shapes', 'https://www.reddit.com/r/virtualreality/comments/mv3y5t/wip_my_apartment_vr_420_edition/', base + 'space_mapper'];
 		for(var j = 0; j < 3; ++j){
 			for(var i = 0; i < 2; ++i){
 				if(i == 1 && j == 2){
@@ -35,10 +37,14 @@ class EyeSceneController extends SceneController{
 					document.body.appendChild(text);
 					this._elements.push(text);
 				}else{
+					var a = document.createElement('a');
+					a.href= links[j*2 + i];
 					var img = document.createElement("img");
 					img.src = img_srcs[j*2 + i];
-					document.body.appendChild(img);
+					a.appendChild(img);
+					document.body.appendChild(a);
 					this._elements.push(img);
+					this._elements.push(a);
 				}
 			}
 		}
