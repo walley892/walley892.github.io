@@ -37,16 +37,15 @@ class EyeSceneController extends SceneController{
 					document.body.appendChild(text);
 					this._elements.push(text);
 				}else{
-					( function() {
 					var img = document.createElement("img");
 					img.addEventListener('click', function(){
-						window.location.href = this.links[j*2 + i];
-					}.bind(this));
+						window.location.href = this.link;
+					}.bind(img));
+					img.link = this.links[j*2+i];
 					img.src = img_srcs[j*2 + i];
 					img.style.cursor = "crosshair";
 					document.body.appendChild(img);
 					this._elements.push(img);
-				}.bind(this)());
 				}
 			}
 		}
