@@ -42,6 +42,7 @@ class EyeSceneController extends SceneController{
 						window.location.href = this.links[j*2 + i];
 					}.bind(this));
 					img.src = img_srcs[j*2 + i];
+					img.style.cursor = "crosshair";
 					document.body.appendChild(img);
 					this._elements.push(img);
 				}
