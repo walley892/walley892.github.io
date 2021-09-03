@@ -12,7 +12,7 @@ class EyeSceneController extends SceneController{
 		this._elements = [];
 	}
 	createHtml(){
-		var img_srcs = ['./cubes.gif', './earth.jpg', './apartment.gif', './ven.jpg', './mars.jpg']
+		var img_srcs = ['./cubes.gif', './osc.gif', './apartment.gif', './shapes.gif', './mapper.gif']
 		for(var j = 0; j < 3; ++j){
 			for(var i = 0; i < 2; ++i){
 				if(i == 1 && j == 2){
