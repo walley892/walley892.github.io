@@ -39,7 +39,7 @@ class EyeSceneController extends SceneController{
 				}else{
 					var img = document.createElement("img");
 					img.addEventListener('click', function(){
-						window.location.href = links[j*2 + i];
+						window.location.href = this.links[j*2 + i];
 					}.bind(this));
 					img.src = img_srcs[j*2 + i];
 					document.body.appendChild(img);
