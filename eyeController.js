@@ -43,7 +43,6 @@ class EyeSceneController extends SceneController{
 					img.src = img_srcs[j*2 + i];
 					a.appendChild(img);
 					document.body.appendChild(a);
-					this._elements.push(img);
 					this._elements.push(a);
 				}
 			}
